@@ -1,4 +1,4 @@
-package ru.stqa.pft.addressbook.homework;
+package ru.stqa.pft.addressbook.tests;
 
 public class ContactInformation {
     private final String firstname;
