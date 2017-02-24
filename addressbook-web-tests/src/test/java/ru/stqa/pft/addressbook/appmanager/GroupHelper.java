@@ -49,13 +49,15 @@ public class GroupHelper extends HelperBase{
     }
 
     public void checkGroup() {
-        if (isElementPresent(By.name("selected[]"))) {
-            return;
-        } else {
-            initGroupCreation();
-            fillGroupForm(new GroupData("test", null, null));
-            submitGroupCreation();
-            returnToGroupPage();
+        if (! isElementPresent(By.name("selected[]"))) {
+            createGroup(new GroupData("test", null, null));
         }
+    }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
     }
 }
