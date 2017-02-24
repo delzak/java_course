@@ -53,7 +53,7 @@ public class GroupHelper extends HelperBase{
             return;
         } else {
             initGroupCreation();
-            fillGroupForm(new GroupData("test1", "test1", "test1"));
+            fillGroupForm(new GroupData("test", null, null));
             submitGroupCreation();
             returnToGroupPage();
         }

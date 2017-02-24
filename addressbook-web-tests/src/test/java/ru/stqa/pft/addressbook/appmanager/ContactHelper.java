@@ -33,7 +33,6 @@ public class ContactHelper extends HelperBase{
 
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactInformation.getGroup());
-
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -64,9 +63,8 @@ public class ContactHelper extends HelperBase{
             return;
         } else {
             clickAddNewContact();
-            inputContactInformation(new ContactInformation("Alex",
-                    "Javov", "89876543210", "anymail@mail.com",
-                    "Any Town, Any Street, Any number house", "[none]"), true);
+            inputContactInformation(new ContactInformation("Test", null, null, null,
+                    null, "[none]"), true);
             submitContactInformation();
             returnToContactPage();
         }
