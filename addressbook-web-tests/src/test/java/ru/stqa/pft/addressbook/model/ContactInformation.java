@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactInformation {
+    private final String id;
     private final String firstname;
     private final String lastname;
     private final String telephone;
@@ -8,13 +9,29 @@ public class ContactInformation {
     private final String address;
     private String group;
 
-    public ContactInformation(String firstname, String lastname, String telephone, String email, String address, String group) {
+
+    public ContactInformation(String id, String firstname, String lastname, String telephone, String email, String address, String group) {
+        this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.telephone = telephone;
         this.email = email;
         this.address = address;
         this.group = group;
+    }
+
+    public ContactInformation(String firstname, String lastname, String telephone, String email, String address, String group) {
+        this.id = null;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.telephone = telephone;
+        this.email = email;
+        this.address = address;
+        this.group = group;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getFirstname() {
@@ -44,7 +61,8 @@ public class ContactInformation {
     @Override
     public String toString() {
         return "ContactInformation{" +
-                "firstname='" + firstname + '\'' +
+                "id='" + id + '\'' +
+                ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
@@ -56,13 +74,15 @@ public class ContactInformation {
 
         ContactInformation that = (ContactInformation) o;
 
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
         return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
     }
 
     @Override
     public int hashCode() {
-        int result = firstname != null ? firstname.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         return result;
     }
