@@ -1,7 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactInformation {
-    private final String id;
+    private int id;
     private final String firstname;
     private final String lastname;
     private final String telephone;
@@ -10,7 +10,7 @@ public class ContactInformation {
     private String group;
 
 
-    public ContactInformation(String id, String firstname, String lastname, String telephone, String email, String address, String group) {
+    public ContactInformation(int id, String firstname, String lastname, String telephone, String email, String address, String group) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -21,7 +21,7 @@ public class ContactInformation {
     }
 
     public ContactInformation(String firstname, String lastname, String telephone, String email, String address, String group) {
-        this.id = null;
+        this.id = 0;
         this.firstname = firstname;
         this.lastname = lastname;
         this.telephone = telephone;
@@ -30,8 +30,12 @@ public class ContactInformation {
         this.group = group;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstname() {
@@ -74,16 +78,17 @@ public class ContactInformation {
 
         ContactInformation that = (ContactInformation) o;
 
-        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (id != that.id) return false;
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
         return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
+        int result = id;
         result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
         result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
         return result;
     }
+
 }
