@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -15,7 +14,7 @@ public class ContactModificationTests extends TestBase{
 
     @Test
     public void testContactModification(){
-        app.getNavigationHelper().gotoHomePage();
+        app.goTo().gotoHomePage();
         app.getContactHelper().checkContact();
         List<ContactInformation> before = app.getContactHelper().getContactList();
         app.getContactHelper().initContactModification(before.size() - 1);
