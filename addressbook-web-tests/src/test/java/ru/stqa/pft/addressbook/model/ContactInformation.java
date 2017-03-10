@@ -1,41 +1,51 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactInformation {
-    private int id;
-    private final String firstname;
-    private final String lastname;
-    private final String telephone;
-    private final String email;
-    private final String address;
+    private int id = Integer.MAX_VALUE;
+    private String firstname;
+    private String lastname;
+    private String telephone;
+    private String email;
+    private String address;
     private String group;
-
-
-    public ContactInformation(int id, String firstname, String lastname, String telephone, String email, String address, String group) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.telephone = telephone;
-        this.email = email;
-        this.address = address;
-        this.group = group;
-    }
-
-    public ContactInformation(String firstname, String lastname, String telephone, String email, String address, String group) {
-        this.id = Integer.MAX_VALUE;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.telephone = telephone;
-        this.email = email;
-        this.address = address;
-        this.group = group;
-    }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public ContactInformation withId(int id) {
         this.id = id;
+        return this;
+    }
+
+    public ContactInformation withFirstname(String firstname) {
+        this.firstname = firstname;
+        return this;
+    }
+
+    public ContactInformation withLastname(String lastname) {
+        this.lastname = lastname;
+        return this;
+    }
+
+    public ContactInformation withTelephone(String telephone) {
+        this.telephone = telephone;
+        return this;
+    }
+
+    public ContactInformation withEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public ContactInformation withAddress(String address) {
+        this.address = address;
+        return this;
+    }
+
+    public ContactInformation withGroup(String group) {
+        this.group = group;
+        return this;
     }
 
     public String getFirstname() {

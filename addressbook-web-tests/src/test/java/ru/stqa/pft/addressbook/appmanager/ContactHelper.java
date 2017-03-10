@@ -63,7 +63,7 @@ public class ContactHelper extends HelperBase{
 
     public void check() {
         if (! isElementPresent(By.name("selected[]"))){
-            create(new ContactInformation("test", null, null, null, null, "[none]"));
+            create(new ContactInformation().withFirstname("test").withGroup("[none]"));
         }
     }
 
@@ -98,9 +98,7 @@ public class ContactHelper extends HelperBase{
             String lastName = element.findElement(By.xpath(".//td[2]")).getText();
             String firstName = element.findElement(By.xpath(".//td[3]")).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            ContactInformation contact = new ContactInformation(id, firstName, lastName,
-                    null, null, null, null);
-            contacts.add(contact);
+            contacts.add(new ContactInformation().withId(id).withFirstname(firstName).withLastname(lastName));
         }
         return contacts;
     }

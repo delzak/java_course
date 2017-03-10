@@ -13,9 +13,9 @@ public class ContactCreationTests extends TestBase{
     public void testContactCreation() {
         app.goTo().homePage();
         List<ContactInformation> before = app.contact().list();
-        ContactInformation contact = new ContactInformation("Alex",
-                "Javov", "89876543210", "anymail@mail.com",
-                "Any Town, Any Street, Any number house", "[none]");
+        ContactInformation contact = new ContactInformation()
+                .withFirstname("Alex").withLastname("Javov").withTelephone("89876543210")
+                .withEmail("anymail@mail.com").withAddress("Any Town, Any Street, Any number house").withGroup("[none]");
         app.contact().create(contact);
         List<ContactInformation> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size() + 1);
