@@ -15,18 +15,18 @@ public class ContactModificationTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.goTo().gotoHomePage();
-        app.getContactHelper().checkContact();
+        app.goTo().homePage();
+        app.contact().check();
     }
 
     @Test
     public void testContactModification(){
-        List<ContactInformation> before = app.getContactHelper().getContactList();
+        List<ContactInformation> before = app.contact().list();
         int index = before.size() - 1;
         ContactInformation contact = new ContactInformation(before.get(index).getId(),"Imya", "Familiya",
                 "telefon", "kakoy-to@email.com", "Gde contact givet", null);
-        app.getContactHelper().modifyContact(index, contact);
-        List<ContactInformation> after = app.getContactHelper().getContactList();
+        app.contact().modify(index, contact);
+        List<ContactInformation> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(index);
