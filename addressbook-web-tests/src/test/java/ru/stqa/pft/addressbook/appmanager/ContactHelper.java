@@ -7,8 +7,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Алексей on 20.02.2017.
@@ -49,12 +50,12 @@ public class ContactHelper extends HelperBase{
         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     }
 
-    public void selectContact(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    public void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
-    public void initContactModification(int index) {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[" + (index + 2) + "]/td[8]/a/img"));
+    public void initContactModification() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
 
     public void submitContactModification() {
@@ -74,15 +75,15 @@ public class ContactHelper extends HelperBase{
         returnToContactPage();
     }
 
-    public void modify(int index, ContactInformation contact) {
-        initContactModification(index);
+    public void modify(ContactInformation contact) {
+        initContactModification();
         inputContactInformation(contact, false);
         submitContactModification();
         returnToContactPage();
     }
 
-    public void delete(int index) {
-        selectContact(index);
+    public void delete(ContactInformation contact) {
+        selectContactById(contact.getId());
         deleteSelectedContacts();
         acceptForm();
     }
@@ -91,8 +92,8 @@ public class ContactHelper extends HelperBase{
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactInformation> list() {
-        List<ContactInformation> contacts = new ArrayList<ContactInformation>();
+    public Set<ContactInformation> all() {
+        Set<ContactInformation> contacts = new HashSet<ContactInformation>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
             String lastName = element.findElement(By.xpath(".//td[2]")).getText();
