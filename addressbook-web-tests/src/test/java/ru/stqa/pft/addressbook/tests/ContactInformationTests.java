@@ -29,14 +29,14 @@ public class ContactInformationTests extends TestBase {
     }
 
     private String mergeFullInformation(ContactInformation contact) {
-        return Arrays.asList(contact.getFirstname(), contact.getLastname(), contact.getAddress(), contact.getHomePhone(),
-                contact.getMobilePhone(), contact.getWorkPhone(), contact.getEmail(), contact.getEmail2(), contact.getEmail3())
+        return Arrays.asList(contact.getFirstname(), contact.getLastname(), contact.getAddress(), "H:" + contact.getHomePhone(),
+           "M:" + contact.getMobilePhone(), "W:" + contact.getWorkPhone(), contact.getEmail(), contact.getEmail2(), contact.getEmail3())
                 .stream().filter((s) -> ! s.equals(""))
                 .map(ContactInformationTests::cleaned)
-                .collect(Collectors.joining());
+                .collect(Collectors.joining(""));
     }
 
     public static String cleaned (String fullName) {
-        return fullName.replaceAll("\n","").replaceAll("\\s","").replaceAll("[-():HMW]", "");
+        return fullName.replaceAll("\n","").replaceAll("\\s","").replaceAll("[-()]", "");
     }
 }
