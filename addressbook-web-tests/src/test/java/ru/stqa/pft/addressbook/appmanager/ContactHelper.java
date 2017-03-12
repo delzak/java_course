@@ -140,4 +140,18 @@ public class ContactHelper extends HelperBase{
                 .withAddress(address).withEmail(email).withEmail2(email2).withEmail3(email3)
                 .withHomePhone(home).withMobilePhone(mobile).withWorkPhone(work);
     }
+
+    public ContactInformation infoFromDetailsForm(ContactInformation contact){
+        seeContactDetailsById(contact.getId());
+        String fullInformation = wd.findElement(By.cssSelector("div[id=content]")).getText();
+        wd.navigate().back();
+        return new ContactInformation().withId(contact.getId()).withFullInfromation(fullInformation);
+    }
+
+    public void seeContactDetailsById(int id) {
+        WebElement checkbox = wd.findElement(By.cssSelector("input[value='" + id + "']"));
+        WebElement row = checkbox.findElement(By.xpath("./../.."));
+        List<WebElement> cells = row.findElements(By.tagName("td"));
+        cells.get(6).findElement(By.tagName("a")).click();
+    }
 }

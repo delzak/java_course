@@ -4,6 +4,7 @@ public class ContactInformation {
     private int id = Integer.MAX_VALUE;
     private String firstname;
     private String lastname;
+    private String fullInformation;
     private String homePhone;
     private String mobilePhone;
     private String workPhone;
@@ -14,6 +15,15 @@ public class ContactInformation {
     private String allEmails;
     private String address;
     private String group;
+
+    public String getFullInformation() {
+        return fullInformation;
+    }
+
+    public ContactInformation withFullInfromation(String fullInformation) {
+        this.fullInformation = fullInformation;
+        return this;
+    }
 
     public String getAllEmails() {
         return allEmails;
