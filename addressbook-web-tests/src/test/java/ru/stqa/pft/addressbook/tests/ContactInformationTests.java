@@ -29,7 +29,7 @@ public class ContactInformationTests extends TestBase {
     }
 
     private String mergeFullInformation(ContactInformation contact) {
-        return Arrays.asList(contact.getFirstname()+ " ", contact.getLastname()+"\n", contact.getAddress()+"\n",
+        return Arrays.asList(contact.getFirstname()+ " ", contact.getLastname()+"\n\n", contact.getAddress()+"\n",
                 "\nH: " + contact.getHomePhone(),"\nM: " + contact.getMobilePhone(), "\nW: " + contact.getWorkPhone()+"\n\n",
                 contact.getEmail()+"\n", contact.getEmail2()+"\n", contact.getEmail3())
                 .stream().filter((s) -> ! s.equals("")).collect(Collectors.joining());
