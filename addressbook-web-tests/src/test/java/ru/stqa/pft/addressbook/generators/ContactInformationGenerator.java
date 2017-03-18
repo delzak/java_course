@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.thoughtworks.xstream.XStream;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 
 import java.io.File;
@@ -20,6 +21,9 @@ public class ContactInformationGenerator {
     @Parameter(names = "-f", description = "Target file")
     public String file;
 
+    @Parameter(names = "-d", description = "Data format")
+    public String format;
+
     public static void main(String[] args) throws IOException {
         ContactInformationGenerator generator = new ContactInformationGenerator();
         JCommander jCommander = new JCommander(generator);
@@ -34,10 +38,26 @@ public class ContactInformationGenerator {
 
     private void run() throws IOException {
         List<ContactInformation> contacts = generateContacts(count);
-        save(contacts, new File(file));
+        if (format.equals("csv")){
+            saveAsCsv(contacts, new File(file));
+        } else if (format.equals("xml")){
+            saveAsXml(contacts, new File(file));
+        } else {
+            System.out.println("Unrecognized format" + format);
+        }
+
     }
 
-    private void save(List<ContactInformation> contacts, File file) throws IOException {
+    private void saveAsXml(List<ContactInformation> contacts, File file) throws IOException {
+        XStream xstream = new XStream();
+        xstream.processAnnotations(ContactInformation.class);
+        String xml = xstream.toXML(contacts);
+        Writer writer = new FileWriter(file);
+        writer.write(xml);
+        writer.close();
+    }
+
+    private void saveAsCsv(List<ContactInformation> contacts, File file) throws IOException {
         System.out.println(new File(".").getAbsoluteFile());
         Writer writer = new FileWriter(file);
         for (ContactInformation contact : contacts) {
@@ -55,7 +75,8 @@ public class ContactInformationGenerator {
             .withLastname(String.format("lastName %s", i)).withAddress(String.format("address %s", i))
             .withEmail(String.format("email %s", i)).withEmail2(String.format("email2 %s", i))
             .withEmail3(String.format("email3 %s", i)).withHomePhone(String.format("homePhone %s", i))
-            .withMobilePhone(String.format("mobilePhone %s", i)).withWorkPhone(String.format("workPhone %s", i)).withGroup("[none]"));
+            .withMobilePhone(String.format("mobilePhone %s", i)).withWorkPhone(String.format("workPhone %s", i)).withGroup("[none]")
+            .withPhoto(new File("src/test/resources/picture.png")));
         }
         return contacts;
     }

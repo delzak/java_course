@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactInformation;
@@ -9,6 +10,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -31,7 +33,22 @@ public class ContactCreationTests extends TestBase{
         return list.iterator();
     }
 
-    @Test(dataProvider = "validContacts")
+    @DataProvider
+    public Iterator<Object[]> validContactsXml() throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.xml")));
+        String xml = "";
+        String line = reader.readLine();
+        while (line != null){
+            xml += line;
+            line = reader.readLine();
+        }
+        XStream xstream = new XStream();
+        xstream.processAnnotations(ContactInformation.class);
+        List<ContactInformation> contacts = (List<ContactInformation>) xstream.fromXML(xml);
+        return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
+    }
+
+    @Test(dataProvider = "validContactsXml")
     public void testContactCreation(ContactInformation contact) {
         app.goTo().homePage();
         Contacts before = app.contact().all();
