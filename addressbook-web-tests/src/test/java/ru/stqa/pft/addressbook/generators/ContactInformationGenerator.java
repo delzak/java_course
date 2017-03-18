@@ -41,9 +41,9 @@ public class ContactInformationGenerator {
         System.out.println(new File(".").getAbsoluteFile());
         Writer writer = new FileWriter(file);
         for (ContactInformation contact : contacts) {
-            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(),
-                    contact.getLastname(), contact.getAddress(), contact.getEmail(), contact.getEmail2(),
-                    contact.getEmail3(), contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone()));
+            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getLastname(),
+                    contact.getAddress(), contact.getEmail(), contact.getEmail2(), contact.getEmail3(),
+                    contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone(), contact.getGroup()));
         }
         writer.close();
     }
@@ -55,7 +55,7 @@ public class ContactInformationGenerator {
             .withLastname(String.format("lastName %s", i)).withAddress(String.format("address %s", i))
             .withEmail(String.format("email %s", i)).withEmail2(String.format("email2 %s", i))
             .withEmail3(String.format("email3 %s", i)).withHomePhone(String.format("homePhone %s", i))
-            .withMobilePhone(String.format("mobilePhone %s", i)).withWorkPhone(String.format("workPhone %s", i)));
+            .withMobilePhone(String.format("mobilePhone %s", i)).withWorkPhone(String.format("workPhone %s", i)).withGroup("[none]"));
         }
         return contacts;
     }
