@@ -8,6 +8,7 @@ import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 import ru.stqa.pft.addressbook.model.Contacts;
 
+import java.io.File;
 import java.util.List;
 
 public class ContactHelper extends HelperBase{
@@ -62,8 +63,8 @@ public class ContactHelper extends HelperBase{
     public void check() {
         if (! isElementPresent(By.name("selected[]"))){
             create(new ContactInformation().withFirstname("test").withLastname("test").withHomePhone("999")
-                    .withMobilePhone("888").withWorkPhone("777").withEmail("test").withEmail2("test")
-                    .withEmail3("test").withAddress("test").withGroup("[none]"));
+                .withMobilePhone("888").withWorkPhone("777").withEmail("test").withEmail2("test").withEmail3("test")
+                .withAddress("test").withGroup("[none]").withPhoto(new File("src/test/resources/picture.png")));
         }
     }
 

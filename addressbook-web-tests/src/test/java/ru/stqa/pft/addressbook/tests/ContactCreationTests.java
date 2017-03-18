@@ -47,7 +47,7 @@ public class ContactCreationTests extends TestBase{
         return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
     }
 
-    @Test(dataProvider = "validContactsCsv")
+    @Test(dataProvider = "validContactsXml")
     public void testContactCreation(ContactInformation contact) {
         app.goTo().homePage();
         Contacts before = app.contact().all();
