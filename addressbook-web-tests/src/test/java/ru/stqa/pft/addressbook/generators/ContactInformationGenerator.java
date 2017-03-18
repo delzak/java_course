@@ -61,9 +61,9 @@ public class ContactInformationGenerator {
         System.out.println(new File(".").getAbsoluteFile());
         Writer writer = new FileWriter(file);
         for (ContactInformation contact : contacts) {
-            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getLastname(),
+            writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n", contact.getFirstname(), contact.getLastname(),
                     contact.getAddress(), contact.getEmail(), contact.getEmail2(), contact.getEmail3(),
-                    contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone(), contact.getGroup()));
+                    contact.getHomePhone(), contact.getMobilePhone(), contact.getWorkPhone(), contact.getGroup(), contact.getPhoto()));
         }
         writer.close();
     }

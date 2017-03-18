@@ -18,8 +18,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class ContactCreationTests extends TestBase{
 
     @DataProvider
-    public Iterator<Object[]> validContacts() throws IOException {
-        File photo = new File("src/test/resources/picture.png");
+    public Iterator<Object[]> validContactsCsv() throws IOException {
         List<Object[]> list = new ArrayList<Object[]>();
         BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/contacts.csv")));
         String line = reader.readLine();
@@ -27,7 +26,7 @@ public class ContactCreationTests extends TestBase{
             String[] split = line.split(";");
             list.add(new Object[]{new ContactInformation().withFirstname(split[0]).withLastname(split[1]).withAddress(split[2])
                     .withEmail(split[3]).withEmail2(split[4]).withEmail3(split[5]).withHomePhone(split[6]).withMobilePhone(split[7])
-                    .withWorkPhone(split[8]).withGroup(split[9]).withPhoto(photo)});
+                    .withWorkPhone(split[8]).withGroup(split[9]).withPhoto(new File(split[10]))});
             line = reader.readLine();
         }
         return list.iterator();
@@ -48,7 +47,7 @@ public class ContactCreationTests extends TestBase{
         return contacts.stream().map((c) -> new Object[] {c}).collect(Collectors.toList()).iterator();
     }
 
-    @Test(dataProvider = "validContactsXml")
+    @Test(dataProvider = "validContactsCsv")
     public void testContactCreation(ContactInformation contact) {
         app.goTo().homePage();
         Contacts before = app.contact().all();
