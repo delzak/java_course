@@ -38,7 +38,11 @@ public class ContactHelper extends HelperBase{
         attach(By.name("photo"), contactInformation.getPhoto());
 
         if (creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactInformation.getGroup());
+            if (contactInformation.getGroups().size() > 0) {
+                Assert.assertTrue(contactInformation.getGroups().size() == 1);
+                new Select(wd.findElement(By.name("new_group")))
+                        .selectByVisibleText(contactInformation.getGroups().iterator().next().getName());
+            }
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -64,7 +68,7 @@ public class ContactHelper extends HelperBase{
         if (! isElementPresent(By.name("selected[]"))){
             create(new ContactInformation().withFirstname("test").withLastname("test").withHomePhone("999")
                 .withMobilePhone("888").withWorkPhone("777").withEmail("test").withEmail2("test").withEmail3("test")
-                .withAddress("test").withGroup("[none]").withPhoto(new File("src/test/resources/picture.png")));
+                .withAddress("test").withPhoto(new File("src/test/resources/picture.png")));
         }
     }
 

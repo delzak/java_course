@@ -3,10 +3,12 @@ package ru.stqa.pft.addressbook.tests;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.thoughtworks.xstream.XStream;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,7 +30,7 @@ public class ContactCreationTests extends TestBase{
                 String[] split = line.split(";");
                 list.add(new Object[]{new ContactInformation().withFirstname(split[0]).withLastname(split[1]).withAddress(split[2])
                     .withEmail(split[3]).withEmail2(split[4]).withEmail3(split[5]).withHomePhone(split[6]).withMobilePhone(split[7])
-                    .withWorkPhone(split[8]).withGroup(split[9]).withPhoto(new File(split[10]))});
+                    .withWorkPhone(split[8]).withPhoto(new File(split[10]))});
                 line = reader.readLine();
             }
             return list.iterator();
@@ -66,6 +68,11 @@ public class ContactCreationTests extends TestBase{
         }
     }
 
+    @BeforeMethod
+    public void ensurePreconditions() {
+        app.goTo().groupPage();
+        app.group().check();
+    }
 
 
     @Test(dataProvider = "validContactsFromJson")
@@ -82,10 +89,11 @@ public class ContactCreationTests extends TestBase{
 
     @Test
     public void testBadContactCreation() {
+        Groups groups = app.db().groups();
+        ContactInformation newContact = new ContactInformation().withFirstname("Alex'").inGroup(groups.iterator().next());
         app.goTo().homePage();
         Contacts before = app.db().contacts();
-        ContactInformation contact = new ContactInformation().withFirstname("Alex'").withGroup("[none]");
-        app.contact().create(contact);
+        app.contact().create(newContact);
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contacts();
 
