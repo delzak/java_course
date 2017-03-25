@@ -13,12 +13,15 @@ public class GroupDeletionTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.goTo().groupPage();
-        app.group().check();
+        if (app.db().groups().size() == 0) {
+            app.goTo().groupPage();
+            app.group().check();
+        }
     }
 
     @Test
     public void testGroupDeletion() {
+        app.goTo().groupPage();
         Groups before = app.group().all();
         GroupData deletedGroup = before.iterator().next();
         app.group().delete(deletedGroup);

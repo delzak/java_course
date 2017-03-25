@@ -55,7 +55,7 @@ public class GroupHelper extends HelperBase{
 
     public void check() {
         if (! isElementPresent(By.name("selected[]"))) {
-           create(new GroupData().withName("test2"));
+           create(new GroupData().withName("test2").withHeader("test2").withFooter("test2"));
         }
     }
 
