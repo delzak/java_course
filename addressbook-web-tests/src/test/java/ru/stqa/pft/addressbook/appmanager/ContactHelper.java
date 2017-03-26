@@ -160,4 +160,20 @@ public class ContactHelper extends HelperBase{
         List<WebElement> cells = row.findElements(By.tagName("td"));
         cells.get(6).findElement(By.tagName("a")).click();
     }
+
+    public void addToGroup(ContactInformation contact) {
+        takeContactForGroup(contact.getId());
+        contactAddToGroup();
+    }
+
+    private void contactAddToGroup() {
+        click(By.name("add"));
+    }
+
+    private void takeContactForGroup(int id) {
+        WebElement checkbox = wd.findElement(By.cssSelector("input[value='" + id + "']"));
+        WebElement row = checkbox.findElement(By.xpath("./../.."));
+        List<WebElement> cells = row.findElements(By.tagName("td"));
+        cells.get(0).click();
+    }
 }
