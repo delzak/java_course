@@ -70,16 +70,19 @@ public class ContactCreationTests extends TestBase{
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.goTo().groupPage();
-        app.group().check();
+        if  (app.db().groups().size() == 0) {
+            app.goTo().groupPage();
+            app.group().check();
+        }
     }
 
 
     @Test(dataProvider = "validContactsFromJson")
     public void testContactCreation(ContactInformation contact) {
+        Groups groups = app.db().groups();
         app.goTo().homePage();
         Contacts before = app.db().contacts();
-        app.contact().create(contact);
+        app.contact().create(contact.inGroup(groups.iterator().next()));
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
 
