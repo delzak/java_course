@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactInformation;
 import ru.stqa.pft.addressbook.model.Contacts;
+import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.io.File;
 import java.util.List;
@@ -69,6 +70,16 @@ public class ContactHelper extends HelperBase{
             create(new ContactInformation().withFirstname("test").withLastname("test").withHomePhone("999")
                 .withMobilePhone("888").withWorkPhone("777").withEmail("test").withEmail2("test").withEmail3("test")
                 .withAddress("test").withPhoto(new File("src/test/resources/picture.png")));
+        }
+    }
+
+    public void checkWithGroup() {
+        if (! isElementPresent(By.name("selected[]"))){
+            create(new ContactInformation().withFirstname("test").withLastname("test").withHomePhone("999")
+                    .withMobilePhone("888").withWorkPhone("777").withEmail("test").withEmail2("test").withEmail3("test")
+                    .withAddress("test").withPhoto(new File("src/test/resources/picture.png")));
+            click(By.name("selected[]"));
+            click(By.name("add"));
         }
     }
 
@@ -175,5 +186,26 @@ public class ContactHelper extends HelperBase{
         WebElement row = checkbox.findElement(By.xpath("./../.."));
         List<WebElement> cells = row.findElements(By.tagName("td"));
         cells.get(0).click();
+    }
+
+    public void removeFromGroup(ContactInformation contact, GroupData group) {
+        takeContactForGroup(contact.getId());
+        goToContactGroup(group.getId());
+        takeContactForGroup(contact.getId());
+        removeContactFromGroup();
+        returnToTableWithAllGroups();
+    }
+
+    private void returnToTableWithAllGroups() {
+        click(By.linkText("home"));
+        wd.findElement(By.cssSelector("option[value='']")).click();
+    }
+
+    private void removeContactFromGroup() {
+        click(By.name("remove"));
+    }
+
+    private void goToContactGroup(int id) {
+        wd.findElement(By.cssSelector("option[value='" + id + "']")).click();
     }
 }
