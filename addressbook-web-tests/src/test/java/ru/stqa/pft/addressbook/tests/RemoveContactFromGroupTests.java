@@ -20,6 +20,7 @@ public class RemoveContactFromGroupTests extends TestBase{
             app.goTo().homePage();
             app.contact().checkWithGroup();
         }
+        //тут нужно добавить проверку наличия группы у контакта. Хотя, я бы внес эту проверку в сам тест, а не в предусловия
     }
 
     @Test
@@ -34,6 +35,7 @@ public class RemoveContactFromGroupTests extends TestBase{
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before));
+        //тут должна быть проверка, что контакт был удален из группы
         verifyContactListInUI();
     }
 }

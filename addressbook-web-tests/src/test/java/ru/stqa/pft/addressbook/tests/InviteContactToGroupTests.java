@@ -30,13 +30,14 @@ public class InviteContactToGroupTests extends TestBase {
         app.goTo().homePage();
         Contacts before = app.db().contacts();
         ContactInformation contact = before.iterator().next().inGroup(groups.iterator().next());
-        app.contact().addToGroup(contact);
+        app.contact().addToGroup(contact, groups.iterator().next());
         app.goTo().homePage();
 
         assertThat(app.contact().count(), equalTo(before.size()));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo(before));
-        assertThat(after.iterator().next().getGroups(), equalTo(contact.getGroups()));
+        //тут должна быть проверка assertThat(группа контакта из базы данных, equalTo(contact.inGroup(только надо как-то добавить сюда
+        //группу)); Только я не знаю, как добавить сюда группу, кроме как через итератор
         verifyContactListInUI();
     }
 }
