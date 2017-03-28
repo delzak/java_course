@@ -172,16 +172,18 @@ public class ContactHelper extends HelperBase{
         cells.get(6).findElement(By.tagName("a")).click();
     }
 
-    public void addToGroup(ContactInformation contact, GroupData group) {
+    public ContactInformation addToGroup(ContactInformation contact, GroupData group) {
         takeContactForGroup(contact.getId());
-        contactAddToGroup(group.getId());
+        contactAddToGroup(group, group.getId());
+        return new ContactInformation().inGroup(group).withId(contact.getId());
     }
 
-    private void contactAddToGroup(int id) {
+    private ContactInformation contactAddToGroup(GroupData group, int id) {
         WebElement list = wd.findElement(By.cssSelector("select[name='to_group']"));
         WebElement element = list.findElement(By.cssSelector("option[value='" + id + "']"));
         element.click();
         click(By.name("add"));
+        return new ContactInformation().inGroup(group);
     }
 
     private void takeContactForGroup(int id) {

@@ -29,7 +29,7 @@ public class InviteContactToGroupTests extends TestBase {
         Groups groups = app.db().groups();
         app.goTo().homePage();
         Contacts before = app.db().contacts();
-        ContactInformation contact = before.iterator().next().inGroup(groups.iterator().next());
+        ContactInformation contact = before.iterator().next();
         app.contact().addToGroup(contact, groups.iterator().next());
         app.goTo().homePage();
 
