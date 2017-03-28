@@ -175,7 +175,8 @@ public class ContactHelper extends HelperBase{
     public ContactInformation addToGroup(ContactInformation contact, GroupData group) {
         takeContactForGroup(contact.getId());
         contactAddToGroup(group, group.getId());
-        return new ContactInformation().inGroup(group).withId(contact.getId());
+        return new ContactInformation().inGroup(group)
+                .withId(contact.getId()).withFirstname(contact.getFirstname()).withLastname(contact.getLastname());
     }
 
     private ContactInformation contactAddToGroup(GroupData group, int id) {

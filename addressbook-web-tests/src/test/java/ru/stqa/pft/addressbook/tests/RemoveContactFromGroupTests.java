@@ -41,5 +41,7 @@ public class RemoveContactFromGroupTests extends TestBase{
         assertThat(after, equalTo(before));
         //тут должна быть проверка, что контакт был удален из группы
         verifyContactListInUI();
+        assertThat(app.db().contact(contact) , equalTo( contact ));
+        System.out.println(app.db().contact(contact));
     }
 }
