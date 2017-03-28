@@ -178,8 +178,8 @@ public class ContactHelper extends HelperBase{
     }
 
     private void contactAddToGroup(int id) {
-        WebElement list = wd.findElement(By.cssSelector("select[name='to_group'"));
-        WebElement element = list.findElement(By.tagName("option"));
+        WebElement list = wd.findElement(By.cssSelector("select[name='to_group']"));
+        WebElement element = list.findElement(By.cssSelector("option[value='" + id + "']"));
         element.click();
         click(By.name("add"));
     }
