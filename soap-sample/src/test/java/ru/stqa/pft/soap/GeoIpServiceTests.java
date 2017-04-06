@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class GeoIpServiceTests {
-
+/*
     @Test
     public void testMyIp() {
         GeoIp geoIp = new GeoIpService().getGeoIpServiceSoap12().getGeoIp("185.150.154.26");
@@ -18,4 +18,5 @@ public class GeoIpServiceTests {
         GeoIp geoIp = new GeoIpService().getGeoIpServiceSoap12().getGeoIp("185.150.154.xxx");
         assertEquals(geoIp.getCountryCode(), "RUS");
     }
+    */
 }
