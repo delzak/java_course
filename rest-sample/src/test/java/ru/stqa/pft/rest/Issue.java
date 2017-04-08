@@ -7,6 +7,7 @@ public class Issue {
     private String description;
     private String state_name;
 
+    public String getStateName() {
         return state_name;
     }
 
