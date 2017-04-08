@@ -4,6 +4,16 @@ public class Project {
 
     private int id;
     private String name;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public Project withStatus(String status) {
+        this.status = status;
+        return this;
+    }
 
     public int getId() {
         return id;

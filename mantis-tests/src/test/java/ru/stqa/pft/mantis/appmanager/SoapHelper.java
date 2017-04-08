@@ -25,7 +25,7 @@ public class SoapHelper {
         MantisConnectPortType mc = getMantisConnect();
         ProjectData[] projects = mc.mc_projects_get_user_accessible("administrator", "root");
         return Arrays.asList(projects).stream()
-                .map((p) -> new Project().withId(p.getId().intValue()).withName(p.getName())).collect(Collectors.toSet());
+                .map((p) -> new Project().withStatus(p.getStatus().toString()).withId(p.getId().intValue()).withName(p.getName())).collect(Collectors.toSet());
     }
 
     private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
