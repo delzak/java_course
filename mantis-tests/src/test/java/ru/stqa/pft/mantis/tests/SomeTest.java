@@ -8,11 +8,11 @@ import java.io.IOException;
 
 public class SomeTest extends TestBase{
 
-    private int issueId = 1;
+    private int issueId = 39;
 
 
     @BeforeMethod
-    public void checkIssueState() throws IOException, ServiceException {
+    public void checkIssueStatus() throws IOException, ServiceException {
         if (isIssueOpen(issueId).equals(true)) {
             skipIfNotFixed(issueId);
         }

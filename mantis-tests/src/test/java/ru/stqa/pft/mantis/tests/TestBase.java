@@ -7,6 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.mantis.appmanager.ApplicationManager;
+import ru.stqa.pft.mantis.model.Issue;
 import ru.stqa.pft.mantis.model.Project;
 
 import javax.xml.rpc.ServiceException;
@@ -26,9 +27,8 @@ public class TestBase {
     }
 
     public Boolean isIssueOpen(int issueId) throws IOException, ServiceException {
-        Set<Project> projects = app.soap().getProjects();
-        Project selectProject = projects.stream().filter(project -> project.getId() == issueId).findFirst().get();
-        if (!selectProject.getStatus().equals("Выпущен")) {
+        Issue issue = app.soap().getIssue(issueId);
+        if (!issue.getStatus().equals("resolved")) {
             return true;
         } else {
             return false;
