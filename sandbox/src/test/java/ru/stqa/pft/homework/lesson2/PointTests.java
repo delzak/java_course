@@ -27,7 +27,7 @@ public class PointTests {
     public void testWrong(){
         Point p1 = new Point(20, 20);
         Point p2 = new Point(40, 40);
-        assert p1.distance(p2) < 0;
+        assert p1.distance(p2) > 0;
     }
     @Test
     public void testObject(){
