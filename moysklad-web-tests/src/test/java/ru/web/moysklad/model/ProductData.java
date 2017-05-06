@@ -1,4 +1,4 @@
-package ru.web.moysklad;
+package ru.web.moysklad.model;
 
 public class ProductData {
     private final String productName;
