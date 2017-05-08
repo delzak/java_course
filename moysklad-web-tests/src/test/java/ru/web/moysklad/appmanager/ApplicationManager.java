@@ -1,10 +1,6 @@
 package ru.web.moysklad.appmanager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.web.moysklad.model.OrganizationData;
-import ru.web.moysklad.model.ProductData;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,15 +13,6 @@ public class ApplicationManager {
     private ClickHelper clickHelper;
     private OrganizationHelper organizationHelper;
     private ProductHelper productHelper;
-
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 
     public void initialization() {
         wd = new FirefoxDriver();

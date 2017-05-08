@@ -3,22 +3,21 @@ package ru.web.moysklad.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class NavigationHelper {
-    private FirefoxDriver wd;
+public class NavigationHelper extends HelperBase {
 
     public NavigationHelper(FirefoxDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void goToOrganizations() {
-        wd.findElement(By.linkText("Юр. лица")).click();
+        click(By.linkText("Юр. лица"));
     }
 
     public void goToProductsAndServices() {
-        wd.findElement(By.linkText("Товары и услуги")).click();
+        click(By.linkText("Товары и услуги"));
     }
 
     public void goToCatalog() {
-        wd.findElement(By.linkText("Справочники")).click();
+        click(By.linkText("Справочники"));
     }
 }
