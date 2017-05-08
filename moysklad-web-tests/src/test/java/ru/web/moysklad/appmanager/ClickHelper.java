@@ -25,19 +25,21 @@ public class ClickHelper extends HelperBase {
         click(By.xpath("//div[@class='popupContent']//button[.='Далее']"));
     }
 
-    public void clickFirstStepHelp() {
-        click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[1]/div/div/div[1]/img[3]"));
-    }
-
     public void clickHelp() {
         click(By.xpath("//table[@class='info']//span[.='Помощь']"));
     }
 
-    public void clickButtonNewProduct() {
-        click(By.xpath("//table[@class='pump-title-panel']/tbody/tr/td[2]/div/table/tbody/tr/td[2]"));
+    public void clickFirstStepHelp() {
+        click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[1]/div/div/div[1]/img[3]"));
     }
 
     public void clickSecondStepHelp() {
         click(By.cssSelector("div.gwt-Label.GL-QOY4BOU"));
     }
+
+    public void clickThirdStepHelp() {
+        click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[3]/div/div/div[3]"));
+    }
+
+
 }

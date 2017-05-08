@@ -10,6 +10,10 @@ public class ProductHelper extends HelperBase {
         super(wd);
     }
 
+    public void clickButtonNewProduct() {
+        click(By.xpath("//table[@class='pump-title-panel']/tbody/tr/td[2]/div/table/tbody/tr/td[2]"));
+    }
+
     public void inputTutorialProductInformation(ProductData productData) throws InterruptedException {
         type(By.xpath("//tr[@class='tutorial-stage-sales-fourth-step']/td[2]/input"), productData.getProductName());
         Thread.sleep(500);

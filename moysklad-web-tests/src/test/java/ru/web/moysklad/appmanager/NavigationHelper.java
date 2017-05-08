@@ -17,4 +17,17 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Справочники"));
         click(By.linkText("Товары и услуги"));
     }
+
+    public void goToTutorialPurchases() {
+        click(By.linkText("Закупки"));
+    }
+
+    public void goToTutorialSupplies() {
+        click(By.linkText("Приёмки"));
+    }
+
+    public void goToSupplies() {
+        click(By.linkText("Закупки"));
+        click(By.linkText("Приёмки"));
+    }
 }
