@@ -9,15 +9,12 @@ public class NavigationHelper extends HelperBase {
         super(wd);
     }
 
-    public void goToOrganizations() {
+    public void goToTutorialOrganizations() {
         click(By.linkText("Юр. лица"));
     }
 
     public void goToProductsAndServices() {
-        click(By.linkText("Товары и услуги"));
-    }
-
-    public void goToCatalog() {
         click(By.linkText("Справочники"));
+        click(By.linkText("Товары и услуги"));
     }
 }

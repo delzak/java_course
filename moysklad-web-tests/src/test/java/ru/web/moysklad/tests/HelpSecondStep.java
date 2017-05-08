@@ -11,7 +11,6 @@ public class HelpSecondStep extends TestBase{
     public void testHelpGoods() throws InterruptedException {
         app.getClickHelper().clickHelp();
         app.getClickHelper().clickSecondStepHelp();
-        app.getNavigationHelper().goToCatalog();
         app.getNavigationHelper().goToProductsAndServices();
         Thread.sleep(500);
         app.getClickHelper().clickButtonNewProduct();

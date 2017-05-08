@@ -10,7 +10,7 @@ public class HelpFirstStep extends TestBase {
     public void testHelpRequisites() throws InterruptedException {
         app.getClickHelper().clickHelp();
         app.getClickHelper().clickFirstStepHelp();
-        app.getNavigationHelper().goToOrganizations();
+        app.getNavigationHelper().goToTutorialOrganizations();
         Thread.sleep(500);
         app.getOrganizationHelper().selectFirstOrganization();
         app.getOrganizationHelper().inputOrganizationInformation(new OrganizationData("saaa"));
