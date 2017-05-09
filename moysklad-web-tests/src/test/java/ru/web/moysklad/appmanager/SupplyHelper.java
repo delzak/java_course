@@ -27,7 +27,6 @@ public class SupplyHelper extends HelperBase{
     }
 
     public void selectGood() {
-        //click(By.xpath("//div[@class='popupContent']//div[.='0д0008 Товар']"));
         click(By.cssSelector("div[class='gwt-HTML'"));
     }
 

@@ -42,4 +42,7 @@ public class ClickHelper extends HelperBase {
     }
 
 
+    public void clickFourthStepHelp() {
+        click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[4]/div/div/div[3]"));
+    }
 }
