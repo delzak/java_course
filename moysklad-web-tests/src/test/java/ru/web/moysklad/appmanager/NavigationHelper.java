@@ -43,4 +43,12 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Склад"));
         click(By.linkText("Остатки"));
     }
+
+    public void goToTutorialSales() {
+        click(By.linkText("Продажи"));
+    }
+
+    public void goToTutorialDemands() {
+        click(By.linkText("Отгрузки"));
+    }
 }

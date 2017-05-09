@@ -14,12 +14,12 @@ public class HelpThirdStep extends TestBase{
         Thread.sleep(500);
         app.getNavigationHelper().goToTutorialSupplies();
         app.getSupplyHelper().clickButtonNewSupply();
-        app.getSupplyHelper().getListOfCounterparty();
+        app.getClickHelper().getListOfCounterparty();
         Thread.sleep(500);
-        app.getSupplyHelper().selectCounterparty();
-        app.getSupplyHelper().addPosition("Товар");
+        app.getClickHelper().selectCounterparty();
+        app.getClickHelper().addPosition("Товар");
         Thread.sleep(500);
-        app.getSupplyHelper().selectGood();
+        app.getClickHelper().selectGood();
         app.getSupplyHelper().setGoodCount("6");
         app.getSupplyHelper().setPrice("1000");
         Thread.sleep(500);

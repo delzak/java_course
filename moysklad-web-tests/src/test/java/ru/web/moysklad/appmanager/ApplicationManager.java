@@ -14,6 +14,7 @@ public class ApplicationManager {
     private OrganizationHelper organizationHelper;
     private ProductHelper productHelper;
     private SupplyHelper supplyHelper;
+    private DemandHelper demandHelper;
 
     public void initialization() {
         wd = new FirefoxDriver();
@@ -24,6 +25,7 @@ public class ApplicationManager {
         organizationHelper = new OrganizationHelper(wd);
         productHelper = new ProductHelper(wd);
         supplyHelper = new SupplyHelper(wd);
+        demandHelper = new DemandHelper(wd);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin@ab1", "111111");
     }
@@ -50,5 +52,9 @@ public class ApplicationManager {
 
     public SupplyHelper getSupplyHelper() {
         return supplyHelper;
+    }
+
+    public DemandHelper getDemandHelper() {
+        return demandHelper;
     }
 }
