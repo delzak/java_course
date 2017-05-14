@@ -49,7 +49,7 @@ public class ClickHelper extends HelperBase {
         click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[5]/div/div/div[3]"));
     }
 
-    public void getListOfCounterparty() {
+    public void openListOfCounterparty() {
         click(By.xpath("//div[@class='tutorial-counter-party-field']/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/div/div"));
     }
 
@@ -63,5 +63,13 @@ public class ClickHelper extends HelperBase {
 
     public void selectGood() {
         click(By.cssSelector("div[class='gwt-HTML'"));
+    }
+
+    public void clickSixthStepHelp() {
+        click(By.xpath("//table[@class='GL-QOY4BH-']/tbody/tr/td[6]/div/div/div[3]"));
+    }
+
+    public void clickOverTutorial() {
+        click(By.xpath("//div[@class='GL-QOY4BI0']//span[.='Закрыть']"));
     }
 }

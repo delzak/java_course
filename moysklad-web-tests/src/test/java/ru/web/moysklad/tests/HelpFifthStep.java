@@ -13,7 +13,7 @@ public class HelpFifthStep extends TestBase{
         app.getNavigationHelper().goToTutorialDemands();
         app.getDemandHelper().clickButtonNewDemand();
         Thread.sleep(1000);
-        app.getClickHelper().getListOfCounterparty();
+        app.getClickHelper().openListOfCounterparty();
         Thread.sleep(500);
         app.getClickHelper().selectCounterparty();
         app.getClickHelper().addPosition("Товар");

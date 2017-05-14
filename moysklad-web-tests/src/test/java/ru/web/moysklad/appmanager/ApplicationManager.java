@@ -1,6 +1,7 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.Dimension;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +20,7 @@ public class ApplicationManager {
     public void initialization() {
         wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().window().setSize(new Dimension(1280, 720));
         wd.get("https://online-1.moysklad.ru/");
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
