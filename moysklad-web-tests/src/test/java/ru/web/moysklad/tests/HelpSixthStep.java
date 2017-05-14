@@ -8,8 +8,10 @@ public class HelpSixthStep extends TestBase{
     public void testHelpProfit() throws InterruptedException {
         app.getClickHelper().clickHelp();
         app.getClickHelper().clickSixthStepHelp();
+        Thread.sleep(500);
         app.getNavigationHelper().goToTutorialSales();
         app.getNavigationHelper().goToProfitability();
+        Thread.sleep(500);
         app.getClickHelper().clickPopupButton();
         app.getClickHelper().clickPopupButton();
         app.getClickHelper().clickPopupButton();

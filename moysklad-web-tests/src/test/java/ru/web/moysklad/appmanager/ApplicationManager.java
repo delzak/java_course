@@ -1,13 +1,16 @@
 package ru.web.moysklad.appmanager;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-    FirefoxDriver wd;
+    WebDriver wd;
 
     private SessionHelper sessionHelper;
     private NavigationHelper navigationHelper;
@@ -16,11 +19,20 @@ public class ApplicationManager {
     private ProductHelper productHelper;
     private SupplyHelper supplyHelper;
     private DemandHelper demandHelper;
+    private String browser;
+
+    public ApplicationManager(String browser) {
+        this.browser = browser;
+    }
 
     public void initialization() {
-        wd = new FirefoxDriver();
+        if (browser == BrowserType.FIREFOX) {
+            wd = new FirefoxDriver();
+            wd.manage().window().setSize(new Dimension(1280, 720));
+        } else if (browser == BrowserType.CHROME) {
+            wd = new ChromeDriver();
+        }
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wd.manage().window().setSize(new Dimension(1280, 720));
         wd.get("https://online-1.moysklad.ru/");
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);

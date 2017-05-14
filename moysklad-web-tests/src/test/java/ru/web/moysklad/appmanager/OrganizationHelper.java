@@ -1,12 +1,12 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import ru.web.moysklad.model.OrganizationData;
 
 public class OrganizationHelper extends HelperBase {
 
-    public OrganizationHelper(FirefoxDriver wd) {
+    public OrganizationHelper(WebDriver wd) {
         super(wd);
     }
 

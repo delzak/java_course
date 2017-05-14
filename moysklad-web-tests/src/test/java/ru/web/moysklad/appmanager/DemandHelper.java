@@ -1,12 +1,12 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class DemandHelper extends HelperBase {
 
-    public DemandHelper(FirefoxDriver wd) {
+    public DemandHelper(WebDriver wd) {
         super(wd);
     }
 

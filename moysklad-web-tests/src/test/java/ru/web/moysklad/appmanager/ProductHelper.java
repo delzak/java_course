@@ -1,12 +1,12 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import ru.web.moysklad.model.ProductData;
 
 public class ProductHelper extends HelperBase {
 
-    public ProductHelper(FirefoxDriver wd) {
+    public ProductHelper(WebDriver wd) {
         super(wd);
     }
 

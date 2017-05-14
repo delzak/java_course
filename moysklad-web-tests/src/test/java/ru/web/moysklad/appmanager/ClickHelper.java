@@ -1,11 +1,11 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 
 public class ClickHelper extends HelperBase {
 
-    public ClickHelper(FirefoxDriver wd) {
+    public ClickHelper(WebDriver wd) {
         super(wd);
     }
 
