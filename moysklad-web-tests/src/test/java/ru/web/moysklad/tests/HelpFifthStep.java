@@ -11,10 +11,11 @@ public class HelpFifthStep extends TestBase{
         Thread.sleep(500);
         app.getNavigationHelper().goToTutorialSales();
         app.getNavigationHelper().goToTutorialDemands();
+        Thread.sleep(1000);
         app.getDemandHelper().clickButtonNewDemand();
         Thread.sleep(1000);
         app.getClickHelper().openListOfCounterparty();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         app.getClickHelper().selectCounterparty();
         app.getClickHelper().addPosition("Товар");
         app.getClickHelper().selectGood();
@@ -32,6 +33,7 @@ public class HelpFifthStep extends TestBase{
         app.getClickHelper().clickPopupButton();
         Thread.sleep(500);
         app.getClickHelper().clickCloseButton();
+        Thread.sleep(1000);
         app.getClickHelper().clickOverTutorialStepHelp();
     }
 }

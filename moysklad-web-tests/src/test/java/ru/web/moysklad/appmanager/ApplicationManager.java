@@ -2,10 +2,14 @@ package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
@@ -30,7 +34,16 @@ public class ApplicationManager {
             wd = new FirefoxDriver();
             wd.manage().window().setSize(new Dimension(1280, 720));
         } else if (browser == BrowserType.CHROME) {
-            wd = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--start-maximized");
+            Map<String, Object> prefs = new HashMap<String, Object>();
+            prefs.put("credentials_enable_service", false);
+            prefs.put("profile.password_manager_enabled", false);
+            options.setExperimentalOption("prefs", prefs);
+
+            DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+            wd = new ChromeDriver(capabilities);
         }
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("https://online-1.moysklad.ru/");

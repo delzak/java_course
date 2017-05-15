@@ -14,8 +14,9 @@ public class HelpThirdStep extends TestBase{
         Thread.sleep(500);
         app.getNavigationHelper().goToTutorialSupplies();
         app.getSupplyHelper().clickButtonNewSupply();
-        app.getClickHelper().openListOfCounterparty();
         Thread.sleep(500);
+        app.getClickHelper().openListOfCounterparty();
+        Thread.sleep(1000);
         app.getClickHelper().selectCounterparty();
         app.getClickHelper().addPosition("Товар");
         Thread.sleep(500);
@@ -26,7 +27,7 @@ public class HelpThirdStep extends TestBase{
         app.getClickHelper().clickSaveButton();
         Thread.sleep(500);
         app.getClickHelper().clickCloseButton();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         app.getClickHelper().clickOverTutorialStepHelp();
     }
 }
