@@ -30,10 +30,10 @@ public class ApplicationManager {
     }
 
     public void initialization() {
-        if (browser == BrowserType.FIREFOX) {
+        if (browser.equals(BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
             wd.manage().window().setSize(new Dimension(1280, 720));
-        } else if (browser == BrowserType.CHROME) {
+        } else if (browser.equals(BrowserType.CHROME)) {
             ChromeOptions options = new ChromeOptions();
             //options.addArguments("--start-maximized");
             Map<String, Object> prefs = new HashMap<String, Object>();
