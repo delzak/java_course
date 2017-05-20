@@ -25,7 +25,7 @@ public class HelpThirdStep extends TestBase{
         app.getSupplyHelper().setPrice("1000");
         Thread.sleep(500);
         app.getClickHelper().clickSaveButton();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         app.getClickHelper().clickCloseButton();
         Thread.sleep(1000);
         app.getClickHelper().clickOverTutorialStepHelp();
