@@ -8,19 +8,19 @@ public class HelpFirstStep extends TestBase {
 
     @Test
     public void testHelpRequisites() throws InterruptedException {
-        app.getClickHelper().clickHelp();
-        app.getClickHelper().clickFirstStepHelp();
-        app.getNavigationHelper().goToTutorialOrganizations();
+        app.click().help();
+        app.tutorial().clickFirstStepHelp();
+        app.tutorial().goToOrganizations();
         Thread.sleep(500);
-        app.getOrganizationHelper().selectFirstOrganization();
-        app.getOrganizationHelper().inputOrganizationInformation(new OrganizationData("saaa"));
-        app.getClickHelper().clickPopupButton();
+        app.organization().selectFirstOrganization();
+        app.organization().inputInformation(new OrganizationData("saaa"));
+        app.tutorial().clickPopupButton();
         Thread.sleep(1000);
-        app.getClickHelper().clickSaveButton();
+        app.click().saveButton();
         Thread.sleep(500);
-        app.getClickHelper().clickCloseButton();
+        app.click().closeButton();
         Thread.sleep(500);
-        app.getClickHelper().clickOverTutorialStepHelp();
+        app.tutorial().clickOverTutorialStepHelp();
     }
 
 }

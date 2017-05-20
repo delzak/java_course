@@ -6,34 +6,34 @@ public class HelpFifthStep extends TestBase{
 
     @Test
     public void testHelpSale() throws InterruptedException {
-        app.getClickHelper().clickHelp();
-        app.getClickHelper().clickFifthStepHelp();
+        app.click().help();
+        app.tutorial().clickFifthStepHelp();
         Thread.sleep(500);
-        app.getNavigationHelper().goToTutorialSales();
-        app.getNavigationHelper().goToTutorialDemands();
+        app.tutorial().goToSales();
+        app.tutorial().goToDemands();
         Thread.sleep(1000);
-        app.getDemandHelper().clickButtonNewDemand();
+        app.demand().clickButtonNewDemand();
         Thread.sleep(1000);
-        app.getClickHelper().openListOfCounterparty();
+        app.click().listOfCounterparty();
         Thread.sleep(1000);
-        app.getClickHelper().selectCounterparty();
-        app.getClickHelper().addPosition("Товар");
-        app.getClickHelper().selectGood();
-        app.getClickHelper().clickPopupButton();
-        app.getDemandHelper().setGoodCount("2");
+        app.click().selectCounterparty();
+        app.click().addPosition("Товар");
+        app.click().selectGood();
+        app.tutorial().clickPopupButton();
+        app.demand().setGoodCount("2");
         Thread.sleep(500);
-        app.getClickHelper().clickPopupButton();
+        app.tutorial().clickPopupButton();
         Thread.sleep(1000);
-        app.getDemandHelper().clickButtonPrint();
+        app.demand().clickButtonPrint();
         Thread.sleep(500);
-        app.getDemandHelper().selectPrintTorg12();
+        app.demand().selectPrintTorg12();
         Thread.sleep(500);
-        app.getDemandHelper().clickActionButtonYes();
-        app.getClickHelper().clickPopupButton();
-        app.getClickHelper().clickPopupButton();
+        app.demand().clickActionButtonYes();
+        app.tutorial().clickPopupButton();
+        app.tutorial().clickPopupButton();
         Thread.sleep(500);
-        app.getClickHelper().clickCloseButton();
+        app.click().closeButton();
         Thread.sleep(1000);
-        app.getClickHelper().clickOverTutorialStepHelp();
+        app.tutorial().clickOverTutorialStepHelp();
     }
 }

@@ -6,28 +6,28 @@ public class HelpThirdStep extends TestBase{
 
     @Test
     public void testHelpAddmission() throws InterruptedException {
-        app.getClickHelper().clickHelp();
-        app.getClickHelper().clickThirdStepHelp();
-        app.getClickHelper().clickPopupButton();
+        app.click().help();
+        app.tutorial().clickThirdStepHelp();
+        app.tutorial().clickPopupButton();
         Thread.sleep(500);
-        app.getNavigationHelper().goToTutorialPurchases();
+        app.tutorial().goToPurchases();
         Thread.sleep(500);
-        app.getNavigationHelper().goToTutorialSupplies();
-        app.getSupplyHelper().clickButtonNewSupply();
+        app.tutorial().goToSupplies();
+        app.supply().clickButtonNewSupply();
         Thread.sleep(500);
-        app.getClickHelper().openListOfCounterparty();
+        app.click().listOfCounterparty();
         Thread.sleep(1000);
-        app.getClickHelper().selectCounterparty();
-        app.getClickHelper().addPosition("Товар");
+        app.click().selectCounterparty();
+        app.click().addPosition("Товар");
         Thread.sleep(500);
-        app.getClickHelper().selectGood();
-        app.getSupplyHelper().setGoodCount("6");
-        app.getSupplyHelper().setPrice("1000");
+        app.click().selectGood();
+        app.supply().setGoodCount("6");
+        app.supply().setPrice("1000");
         Thread.sleep(500);
-        app.getClickHelper().clickSaveButton();
+        app.click().saveButton();
         Thread.sleep(1000);
-        app.getClickHelper().clickCloseButton();
+        app.click().closeButton();
         Thread.sleep(1000);
-        app.getClickHelper().clickOverTutorialStepHelp();
+        app.tutorial().clickOverTutorialStepHelp();
     }
 }

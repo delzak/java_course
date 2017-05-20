@@ -23,6 +23,7 @@ public class ApplicationManager {
     private ProductHelper productHelper;
     private SupplyHelper supplyHelper;
     private DemandHelper demandHelper;
+    private TutorialHelper tutorialHelper;
     private String browser;
 
     public ApplicationManager(String browser) {
@@ -35,7 +36,7 @@ public class ApplicationManager {
             wd.manage().window().setSize(new Dimension(1280, 720));
         } else if (browser.equals(BrowserType.CHROME)) {
             ChromeOptions options = new ChromeOptions();
-            //options.addArguments("--start-maximized");
+            //options.addArguments("--start-maximized"); установка максимального разрешения окна браузера
             Map<String, Object> prefs = new HashMap<String, Object>();
             prefs.put("credentials_enable_service", false);
             prefs.put("profile.password_manager_enabled", false);
@@ -53,6 +54,7 @@ public class ApplicationManager {
         productHelper = new ProductHelper(wd);
         supplyHelper = new SupplyHelper(wd);
         demandHelper = new DemandHelper(wd);
+        tutorialHelper = new TutorialHelper(wd);
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin@ab1", "111111");
     }
@@ -61,27 +63,31 @@ public class ApplicationManager {
         wd.quit();
     }
 
-    public ClickHelper getClickHelper() {
+    public ClickHelper click() {
         return clickHelper;
     }
 
-    public NavigationHelper getNavigationHelper() {
+    public NavigationHelper goTo() {
         return navigationHelper;
     }
 
-    public OrganizationHelper getOrganizationHelper(){
+    public OrganizationHelper organization(){
         return organizationHelper;
     }
 
-    public ProductHelper getProductHelper() {
+    public ProductHelper good() {
         return productHelper;
     }
 
-    public SupplyHelper getSupplyHelper() {
+    public SupplyHelper supply() {
         return supplyHelper;
     }
 
-    public DemandHelper getDemandHelper() {
+    public DemandHelper demand() {
         return demandHelper;
+    }
+
+    public TutorialHelper tutorial() {
+        return tutorialHelper;
     }
 }

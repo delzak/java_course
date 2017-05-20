@@ -6,16 +6,16 @@ public class HelpSixthStep extends TestBase{
 
     @Test
     public void testHelpProfit() throws InterruptedException {
-        app.getClickHelper().clickHelp();
-        app.getClickHelper().clickSixthStepHelp();
+        app.click().help();
+        app.tutorial().clickSixthStepHelp();
         Thread.sleep(500);
-        app.getNavigationHelper().goToTutorialSales();
-        app.getNavigationHelper().goToProfitability();
+        app.tutorial().goToSales();
+        app.tutorial().goToProfitability();
         Thread.sleep(500);
-        app.getClickHelper().clickPopupButton();
-        app.getClickHelper().clickPopupButton();
-        app.getClickHelper().clickPopupButton();
+        app.tutorial().clickPopupButton();
+        app.tutorial().clickPopupButton();
+        app.tutorial().clickPopupButton();
         Thread.sleep(500);
-        app.getClickHelper().clickOverTutorial();
+        app.tutorial().clickOverTutorial();
     }
 }

@@ -8,18 +8,18 @@ public class HelpSecondStep extends TestBase{
 
     @Test
     public void testHelpGoods() throws InterruptedException {
-        app.getClickHelper().clickHelp();
-        app.getClickHelper().clickSecondStepHelp();
-        app.getNavigationHelper().goToProductsAndServices();
+        app.click().help();
+        app.tutorial().clickSecondStepHelp();
+        app.goTo().productsAndServices();
         Thread.sleep(500);
-        app.getProductHelper().clickButtonNewProduct();
-        app.getProductHelper().inputTutorialProductInformation(new ProductData("Товар", "1500"));
+        app.good().clickButtonNewProduct();
+        app.tutorial().inputProductInformation(new ProductData("Товар", "1500"));
         Thread.sleep(500);
-        app.getClickHelper().clickSaveButton();
+        app.click().saveButton();
         Thread.sleep(500);
-        app.getClickHelper().clickCloseButton();
+        app.click().closeButton();
         Thread.sleep(500);
-        app.getClickHelper().clickOverTutorialStepHelp();
+        app.tutorial().clickOverTutorialStepHelp();
     }
 
 }

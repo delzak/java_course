@@ -10,7 +10,7 @@ public class OrganizationHelper extends HelperBase {
         super(wd);
     }
 
-    public void inputOrganizationInformation(OrganizationData organizationData) {
+    public void inputInformation(OrganizationData organizationData) {
         type(By.xpath("//tr[@class='tutorial-stage-company-fifth-step']/td[2]/input"), organizationData.getOrganizationName());
     }
 
