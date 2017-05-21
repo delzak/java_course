@@ -2,7 +2,10 @@ package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import ru.web.moysklad.model.ProductData;
+
+import java.util.List;
 
 public class TutorialHelper extends HelperBase {
     public TutorialHelper(WebDriver wd) {
@@ -81,5 +84,17 @@ public class TutorialHelper extends HelperBase {
         type(By.xpath("//tr[@class='tutorial-stage-sales-fourth-step']/td[2]/input"), productData.getProductName());
         Thread.sleep(500);
         type(By.xpath("//table[@class='price-table']/tbody/tr/td[2]/div/table/tbody/tr/td[1]/div/input"), productData.getProductSum());
+    }
+
+    public String getHintText() {
+        String text = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BO5")).getText();
+        return text;
+    }
+
+    public String getOverTutorialText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще пять.']")).getText();
+        return text1 + "\n" + text2 + "\n" + text3;
     }
 }
