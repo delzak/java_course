@@ -36,6 +36,8 @@ public class HelpFirstStep extends TestBase {
         hint = app.tutorial().getOverTutorialText();
         assertEquals(hint, "Поздравляем!\nВы завершили первый шаг,\nосталось еще пять.");
         app.tutorial().clickOverTutorialStepHelp();
+        hint = app.tutorial().getHintText();
+        assertEquals(hint, "Нажмите на вкладку «Справочники»");
     }
 
 }
