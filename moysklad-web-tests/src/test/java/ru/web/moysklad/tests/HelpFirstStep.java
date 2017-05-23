@@ -33,7 +33,7 @@ public class HelpFirstStep extends TestBase {
         assertEquals(hint, "Нажмите кнопку «Закрыть»");
         app.click().closeButton();
         //Thread.sleep(500);
-        hint = app.tutorial().getOverTutorialText();
+        hint = app.tutorial().getOverFirstStepText();
         assertEquals(hint, "Поздравляем!\nВы завершили первый шаг,\nосталось еще пять.");
         app.tutorial().clickOverTutorialStepHelp();
         hint = app.tutorial().getHintText();

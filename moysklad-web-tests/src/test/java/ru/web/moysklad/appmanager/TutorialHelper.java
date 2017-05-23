@@ -52,6 +52,14 @@ public class TutorialHelper extends HelperBase {
         click(By.linkText("Юр. лица"));
     }
 
+    public void goToCatalog() {
+        click(By.linkText("Справочники"));
+    }
+
+    public void goToGoods() {
+        click(By.linkText("Товары и услуги"));
+    }
+
     public void goToPurchases() {
         click(By.linkText("Закупки"));
     }
@@ -80,9 +88,11 @@ public class TutorialHelper extends HelperBase {
         click(By.linkText("Прибыльность"));
     }
 
-    public void inputProductInformation(ProductData productData) throws InterruptedException {
+    public void inputProductName(ProductData productData) {
         type(By.xpath("//tr[@class='tutorial-stage-sales-fourth-step']/td[2]/input"), productData.getProductName());
-        Thread.sleep(500);
+    }
+
+    public void inputProductPrice(ProductData productData) {
         type(By.xpath("//table[@class='price-table']/tbody/tr/td[2]/div/table/tbody/tr/td[1]/div/input"), productData.getProductSum());
     }
 
@@ -91,10 +101,17 @@ public class TutorialHelper extends HelperBase {
         return text;
     }
 
-    public String getOverTutorialText() {
+    public String getOverFirstStepText() {
         String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
         String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
         String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще пять.']")).getText();
+        return text1 + "\n" + text2 + "\n" + text3;
+    }
+
+    public String getOverSecondStepText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще четыре.']")).getText();
         return text1 + "\n" + text2 + "\n" + text3;
     }
 }
