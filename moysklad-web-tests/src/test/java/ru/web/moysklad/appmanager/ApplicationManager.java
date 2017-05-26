@@ -47,7 +47,7 @@ public class ApplicationManager {
             wd = new ChromeDriver(capabilities);
         }
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wd.get("https://online-1.moysklad.ru/");
+        wd.get("https://online-7.moysklad.ru/");
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         organizationHelper = new OrganizationHelper(wd);

@@ -114,4 +114,11 @@ public class TutorialHelper extends HelperBase {
         String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще четыре.']")).getText();
         return text1 + "\n" + text2 + "\n" + text3;
     }
+
+    public String getOverThirdStepText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще три.']")).getText();
+        return text1 + "\n" + text2 + "\n" + text3;
+    }
 }

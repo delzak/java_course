@@ -9,35 +9,23 @@ import static org.testng.Assert.*;
 public class HelpFirstStep extends TestBase {
 
     @Test
-    public void testHelpRequisites() throws InterruptedException {
-        String hint;
+    public void testHelpRequisites() {
         app.click().help();
         app.tutorial().clickFirstStepHelp();
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Перейдите в раздел «Юр. лица»");
+        assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Юр. лица»");
         app.tutorial().goToOrganizations();
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Откройте карточку юр. лица, для этого нажмите на его название");
-        //Thread.sleep(500);
+        assertEquals(app.tutorial().getHintText(), "Откройте карточку юр. лица, для этого нажмите на его название");
         app.organization().selectFirstOrganization();
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Заполните наименование вашей компании");
+        assertEquals(app.tutorial().getHintText(), "Заполните наименование вашей компании");
         app.organization().inputInformation(new OrganizationData("saaa"));
         app.tutorial().clickPopupButton();
-        //Thread.sleep(1000);
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Нажмите кнопку «Сохранить»");
+        assertEquals(app.tutorial().getHintText(), "Нажмите кнопку «Сохранить»");
         app.click().saveButton();
-        //Thread.sleep(500);
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Нажмите кнопку «Закрыть»");
+        assertEquals(app.tutorial().getHintText(), "Нажмите кнопку «Закрыть»");
         app.click().closeButton();
-        //Thread.sleep(500);
-        hint = app.tutorial().getOverFirstStepText();
-        assertEquals(hint, "Поздравляем!\nВы завершили первый шаг,\nосталось еще пять.");
+        assertEquals(app.tutorial().getOverFirstStepText(), "Поздравляем!\nВы завершили первый шаг,\nосталось еще пять.");
         app.tutorial().clickOverTutorialStepHelp();
-        hint = app.tutorial().getHintText();
-        assertEquals(hint, "Нажмите на вкладку «Справочники»");
+        assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Справочники»");
     }
 
 }
