@@ -2,10 +2,7 @@ package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import ru.web.moysklad.model.ProductData;
-
-import java.util.List;
 
 public class TutorialHelper extends HelperBase {
     public TutorialHelper(WebDriver wd) {
@@ -120,5 +117,25 @@ public class TutorialHelper extends HelperBase {
         String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
         String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще три.']")).getText();
         return text1 + "\n" + text2 + "\n" + text3;
+    }
+
+    public String getOverFourthStepText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='осталось еще два.']")).getText();
+        return text1 + "\n" + text2 + "\n" + text3;
+    }
+
+    public String getOverFifthStepText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        String text3 = wd.findElement(By.xpath("//div[@class='GL-QOY4BI0']//div[.='остался еще один.']")).getText();
+        return text1 + "\n" + text2 + "\n" + text3;
+    }
+
+    public String getOverSixthStepText() {
+        String text1 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BM0")).getText();
+        String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
+        return text1 + "\n" + text2;
     }
 }

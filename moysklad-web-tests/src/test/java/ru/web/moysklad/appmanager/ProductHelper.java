@@ -2,7 +2,6 @@ package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.web.moysklad.model.ProductData;
 
 public class ProductHelper extends HelperBase {
 
