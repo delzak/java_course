@@ -138,4 +138,8 @@ public class TutorialHelper extends HelperBase {
         String text2 = wd.findElement(By.cssSelector("div.gwt-HTML.GL-QOY4BL0")).getText();
         return text1 + "\n" + text2;
     }
+
+    public void clickRepeatTutorial() {
+        click(By.xpath("//div[@class='GL-QOY4BAR']//span[.='Пройти повторно']"));
+    }
 }
