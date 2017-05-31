@@ -4,20 +4,21 @@ public class ProductData {
     private String productName;
     private String productSum;
 
-    public ProductData(String productName, String productSumm) {
-        this.productName = productName;
-        this.productSum = productSumm;
-    }
-
-    public ProductData(String productSum) {
-        this.productSum = productSum;
-    }
-
     public String getProductName() {
         return productName;
     }
 
     public String getProductSum() {
         return productSum;
+    }
+
+    public ProductData withProductName(String productName) {
+        this.productName = productName;
+        return this;
+    }
+
+    public ProductData withProductSum(String productSum) {
+        this.productSum = productSum;
+        return this;
     }
 }

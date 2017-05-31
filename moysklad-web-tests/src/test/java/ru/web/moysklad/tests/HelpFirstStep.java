@@ -17,7 +17,7 @@ public class HelpFirstStep extends TestBase {
         assertEquals(app.tutorial().getHintText(), "Откройте карточку юр. лица, для этого нажмите на его название");
         app.organization().selectFirstOrganization();
         assertEquals(app.tutorial().getHintText(), "Заполните наименование вашей компании");
-        app.organization().inputInformation(new OrganizationData("saaa"));
+        app.organization().inputInformation(new OrganizationData().withOrganizationName("saaa"));
         app.tutorial().clickPopupButton();
         assertEquals(app.tutorial().getHintText(), "Нажмите кнопку «Сохранить»");
         app.click().saveButton();

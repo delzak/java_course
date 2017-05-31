@@ -19,9 +19,9 @@ public class HelpSecondStep extends TestBase{
         assertEquals(app.tutorial().getHintText(), "Чтобы добавить новый товар, нажмите кнопку «+ Товар»");
         app.good().clickButtonNewProduct();
         assertEquals(app.tutorial().getHintText(), "Введите название товара");
-        app.tutorial().inputProductName(new ProductData("Товар", null));
+        app.tutorial().inputProductName(new ProductData().withProductName("Товар"));
         assertEquals(app.tutorial().getHintText(), "Введите цену продажи товара - 1500");
-        app.tutorial().inputProductPrice(new ProductData("1500"));
+        app.tutorial().inputProductPrice(new ProductData().withProductSum("1500"));
         assertEquals(app.tutorial().getHintText(), "Нажмите кнопку «Сохранить»");
         app.click().saveButton();
         assertEquals(app.tutorial().getHintText(), "Нажмите кнопку «Закрыть»");
