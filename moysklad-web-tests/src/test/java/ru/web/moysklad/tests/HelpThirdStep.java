@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 public class HelpThirdStep extends TestBase{
 
     @Test
-    public void testHelpAddmission() {
+    public void testHelpAddmission() throws InterruptedException {
         app.click().help();
         app.tutorial().clickThirdStepHelp();
         assertEquals(app.tutorial().getHintText(), "Для контроля остатков товаров, а также расчета " +
@@ -25,7 +25,13 @@ public class HelpThirdStep extends TestBase{
         app.click().selectCounterparty();
         assertEquals(app.tutorial().getHintText(), "Добавьте товар в приёмку. Вы можете сделать это, введя его наименование и" +
                 " выбрав соответствующий товар из списка, либо же выбрав его из Справочника.");
+        app.click().addPosition("Ошибка");
+        assertEquals(app.tutorial().getHintText(), "Нажмите на товар, чтобы добавить его в приемку");
+        app.tutorial().clearAddPosition();
+        app.click().listOfCounterparty();
+        app.click().selectCounterparty();
         app.click().addPosition("Товар");
+        Thread.sleep(1000);
         assertEquals(app.tutorial().getHintText(), "Нажмите на товар, чтобы добавить его в приемку");
         app.click().selectGood();
         assertEquals(app.tutorial().getHintText(), "Укажите кол-во товара - 6");

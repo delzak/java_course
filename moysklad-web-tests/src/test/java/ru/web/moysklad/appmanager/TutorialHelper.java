@@ -85,6 +85,11 @@ public class TutorialHelper extends HelperBase {
         click(By.linkText("Прибыльность"));
     }
 
+    public void clearAddPosition() {
+        wd.findElement(By.xpath("//div[@class='b-delivery-actionbar']/input")).clear();
+        //click(By.xpath("//div[@class='tutorial-counter-party-field']/table[1]/tbody/tr/td[1]/table/tbody/tr/td[3]/div/div"));
+    }
+
     public void inputProductName(ProductData productData) {
         type(By.xpath("//tr[@class='tutorial-stage-sales-fourth-step']/td[2]/input"), productData.getProductName());
     }
