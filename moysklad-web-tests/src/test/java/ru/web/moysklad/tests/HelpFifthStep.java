@@ -7,7 +7,7 @@ import static org.testng.Assert.assertEquals;
 public class HelpFifthStep extends TestBase{
 
     @Test
-    public void testHelpSale() {
+    public void testHelpSale() throws InterruptedException {
         app.click().help();
         app.tutorial().clickFifthStepHelp();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Продажи»");
@@ -22,7 +22,13 @@ public class HelpFifthStep extends TestBase{
         app.click().selectCounterparty();
         assertEquals(app.tutorial().getHintText(), "Добавьте товар в отгрузку. Вы можете сделать это, введя " +
                 "его наименование и выбрав соответствующий товар из списка, либо же выбрав его из Справочника или Остатков.");
+        app.click().addPosition("Ошибка");
+        assertEquals(app.tutorial().getHintText(), "Нажмите на товар, чтобы добавить его в отгрузку");
+        app.tutorial().clearAddPosition();
+        app.click().listOfCounterparty();
+        app.click().selectCounterparty();
         app.click().addPosition("Товар");
+        Thread.sleep(1000);
         assertEquals(app.tutorial().getHintText(), "Нажмите на товар, чтобы добавить его в отгрузку");
         app.click().selectGood();
         assertEquals(app.tutorial().getHintText(), "Вы можете назначить товарам штрих-коды и " +

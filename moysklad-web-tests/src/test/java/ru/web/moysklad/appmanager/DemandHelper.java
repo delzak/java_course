@@ -16,7 +16,7 @@ public class DemandHelper extends HelperBase {
 
     public void setGoodCount(String count) {
         new Actions(wd).moveToElement(wd.findElement(
-                By.xpath("//tr[@class='tutorial-inline-editor-table-row']//td[.='00002 Товар[по умолчанию]']"))).build().perform();
+        By.xpath("//div[@class='gwt-TabPanelBottom']/div[1]/div/table/tbody/tr[1]/td[4]/div/div[2]/div/div/input"))).build().perform();
         type(By.xpath("//div[@class='gwt-TabPanelBottom']/div[1]/div/table/tbody/tr[1]/td[4]/div/div[1]/div/div/input"), count);
     }
 
