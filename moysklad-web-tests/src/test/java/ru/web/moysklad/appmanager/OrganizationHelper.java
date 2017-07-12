@@ -34,4 +34,10 @@ public class OrganizationHelper extends HelperBase {
         }
         return organizations;
     }
+
+    public String getTitleText() {
+        String text = wd.findElement(By.cssSelector("div.title")).getText();
+        System.out.println("Текст = " + text);
+        return text;
+    }
 }

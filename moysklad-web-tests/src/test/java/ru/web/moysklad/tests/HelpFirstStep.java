@@ -16,7 +16,7 @@ public class HelpFirstStep extends TestBase {
         app.click().help();
         app.tutorial().clickFirstStepHelp();
         assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Юр. лица»");
-        app.tutorial().goToOrganizations();
+        app.goTo().organizations();
         Set<OrganizationData> organizations = app.organization().all();
         assertTrue(organizations.size() > 0);
         assertEquals(app.tutorial().getHintText(), "Откройте карточку юр. лица, для этого нажмите на его название");

@@ -11,9 +11,9 @@ public class HelpSixthStep extends TestBase{
         app.click().help();
         app.tutorial().clickSixthStepHelp();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Продажи»»");
-        app.tutorial().goToSales();
+        app.goTo().sales();
         assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Прибыльность»");
-        app.tutorial().goToProfitability();
+        app.goTo().profitability();
         assertEquals(app.tutorial().getHintText(), "В столбце «Сумма себестоимости» " +
                 "показывается закупочная стоимость товара");
         app.tutorial().clickPopupButton();

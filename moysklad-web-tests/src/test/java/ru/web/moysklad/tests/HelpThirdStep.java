@@ -1,5 +1,6 @@
 package ru.web.moysklad.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -14,9 +15,9 @@ public class HelpThirdStep extends TestBase{
                 "себестоимости и прибыли необходимо вести учет поступлений товара на склад.");
         app.tutorial().clickPopupButton();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Закупки»");
-        app.tutorial().goToPurchases();
+        app.goTo().purchases();
         assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Приемки»");
-        app.tutorial().goToSupplies();
+        app.goTo().supplies();
         assertEquals(app.tutorial().getHintText(), "Чтобы учесть поступление товара, нажмите кнопку «+ Приемка»");
         app.supply().clickButtonNewSupply();
         assertEquals(app.tutorial().getHintText(), "Нажмите на стрелочку, чтобы выбрать контрагента");
@@ -45,5 +46,23 @@ public class HelpThirdStep extends TestBase{
         assertEquals(app.tutorial().getOverThirdStepText(), "Поздравляем!\nВы завершили третий шаг,\nосталось еще три.");
         app.tutorial().clickOverTutorialStepHelp();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Склад»");
+    }
+
+    @Test
+    public void testFindAndAdd() throws InterruptedException {
+        app.goTo().purchases();
+        app.goTo().supplies();
+        Thread.sleep(500);
+        app.supply().clickButtonNewSupply();
+        app.click().addPosition("FullProduct");
+        Assert.assertEquals(app.tutorial().getBubbleText(), "FP001 – fp1 FullProduct");
+        app.click().addPosition("FP001");
+        Assert.assertEquals(app.tutorial().getBubbleText(), "FP001 – fp1 FullProduct");
+        app.click().addPosition("fp1");
+        Assert.assertEquals(app.tutorial().getBubbleText(), "FP001 – fp1 FullProduct");
+        app.click().addBarcodePosition("2000000999999");
+        app.click().catalogButton();
+        app.click().addGoodFromCatalog();
+        app.click().saveButton();
     }
 }

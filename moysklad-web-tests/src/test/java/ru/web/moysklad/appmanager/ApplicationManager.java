@@ -17,6 +17,7 @@ public class ApplicationManager {
     WebDriver wd;
 
     private SessionHelper sessionHelper;
+    private DashboardHelper dashboardHelper;
     private NavigationHelper navigationHelper;
     private ClickHelper clickHelper;
     private OrganizationHelper organizationHelper;
@@ -47,7 +48,7 @@ public class ApplicationManager {
             wd = new ChromeDriver(capabilities);
         }
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        wd.get("https://online-7.moysklad.ru/");
+        wd.get("https://online-13.moysklad.ru/");
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         organizationHelper = new OrganizationHelper(wd);
@@ -56,7 +57,8 @@ public class ApplicationManager {
         demandHelper = new DemandHelper(wd);
         tutorialHelper = new TutorialHelper(wd);
         sessionHelper = new SessionHelper(wd);
-        sessionHelper.login("admin@ab1", "111111");
+        dashboardHelper = new DashboardHelper(wd);
+        sessionHelper.login("admin@aatest", "111111");
     }
 
     public void stop() {
@@ -65,6 +67,10 @@ public class ApplicationManager {
 
     public ClickHelper click() {
         return clickHelper;
+    }
+
+    public DashboardHelper dashboard() {
+        return dashboardHelper;
     }
 
     public NavigationHelper goTo() {

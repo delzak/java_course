@@ -1,7 +1,9 @@
 package ru.web.moysklad.appmanager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class ClickHelper extends HelperBase {
 
@@ -35,5 +37,19 @@ public class ClickHelper extends HelperBase {
 
     public void selectGood() {
         click(By.cssSelector("div[class='gwt-HTML'"));
+    }
+
+    public void addBarcodePosition(String barcode) {
+        type(By.xpath("//div[@class='b-delivery-actionbar']/input"), barcode);
+        wd.findElement(By.xpath("//div[@class='b-delivery-actionbar']/input")).sendKeys(Keys.RETURN);
+    }
+
+    public void catalogButton() {
+        click(By.xpath("//div[@class='b-delivery-actionbar']//span[.='Справочник']"));
+    }
+
+    public void addGoodFromCatalog() {
+        click(By.xpath("//div[@class='tablePanel']/table[1]/tbody[1]/tr/td[3]/div/div"));
+        click(By.xpath("//table[@class='b-action-buttons-wrap']//span[.='Выбрать']"));
     }
 }

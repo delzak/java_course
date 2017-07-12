@@ -11,9 +11,9 @@ public class HelpFourthStep extends TestBase{
         app.click().help();
         app.tutorial().clickFourthStepHelp();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Склад»");
-        app.tutorial().goToStore();
+        app.goTo().store();
         assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Остатки»");
-        app.tutorial().goToStocks();
+        app.goTo().stocks();
         assertEquals(app.tutorial().getHintText(), "В столбце «Остаток» показывается " +
                 "фактический остаток товара на складе");
         app.tutorial().clickPopupButton();

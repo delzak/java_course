@@ -11,9 +11,9 @@ public class HelpFifthStep extends TestBase{
         app.click().help();
         app.tutorial().clickFifthStepHelp();
         assertEquals(app.tutorial().getHintText(), "Нажмите на вкладку «Продажи»");
-        app.tutorial().goToSales();
+        app.goTo().sales();
         assertEquals(app.tutorial().getHintText(), "Перейдите в раздел «Отгрузки»");
-        app.tutorial().goToDemands();
+        app.goTo().demands();
         assertEquals(app.tutorial().getHintText(), "Чтобы учесть продажу, нажмите кнопку «+ Отгрузка»");
         app.demand().clickButtonNewDemand();
         assertEquals(app.tutorial().getHintText(), "Нажмите на стрелочку, чтобы выбрать контрагента");
