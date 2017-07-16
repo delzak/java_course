@@ -47,7 +47,7 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Приложения"));
     }
 
-    public void subscriprion() {
+    public void subscription() {
         click(By.linkText("Подписка"));
     }
 
@@ -57,13 +57,35 @@ public class NavigationHelper extends HelperBase {
 
     //Вкладка "Розница"
 
-    public void catalog() {
-        click(By.linkText("Справочники"));
+    public void retail() {
+        click(By.linkText("Розница"));
     }
 
-    public void productsAndServices() {
-        click(By.linkText("Товары и услуги"));
+    public void retailStore() {
+        click(By.linkText("Точки продаж"));
     }
+
+    public void retailShift() {
+        click(By.linkText("Смены"));
+    }
+
+    public void retailDemand() {
+        click(By.xpath("//div[@class='subMenu']/span[3]/a/span"));
+    }
+
+    public void retailSalesReturn() {
+        click(By.linkText("Возвраты"));
+    }
+
+    public void retaildrawercashin() {
+        click(By.linkText("Внесения"));
+    }
+
+    public void retaildrawercashout() {
+        click(By.linkText("Выплаты"));
+    }
+
+    //Вкладка "Закупки
 
     public void purchases() {
         click(By.linkText("Закупки"));
@@ -73,6 +95,8 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Приёмки"));
     }
 
+    //Вкладка "Продажи"
+
     public void sales() {
         click(By.linkText("Продажи"));
     }
@@ -80,6 +104,8 @@ public class NavigationHelper extends HelperBase {
     public void demands() {
         click(By.linkText("Отгрузки"));
     }
+
+    //Вкладка "Склад"
 
     public void store() {
         click(By.linkText("Склад"));
@@ -92,4 +118,24 @@ public class NavigationHelper extends HelperBase {
     public void profitability() {
         click(By.linkText("Прибыльность"));
     }
+
+    //Вкладка "Деньги"
+
+    //Вкладка "Справочники"
+
+    public void catalog() {
+        click(By.linkText("Справочники"));
+    }
+
+    public void productsAndServices() {
+        click(By.linkText("Товары и услуги"));
+    }
+
+
+
+
+
+
+
+
 }

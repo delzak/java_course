@@ -1,7 +1,8 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.Pages.MyCompany;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.web.moysklad.appmanager.HelperBase;
 
 public class DashboardHelper extends HelperBase {
     public DashboardHelper(WebDriver wd) {

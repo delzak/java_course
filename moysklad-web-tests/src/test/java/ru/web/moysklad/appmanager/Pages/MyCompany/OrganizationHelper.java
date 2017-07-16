@@ -1,8 +1,9 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.Pages.MyCompany;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.web.moysklad.appmanager.HelperBase;
 import ru.web.moysklad.model.OrganizationData;
 
 import java.util.HashSet;
@@ -35,9 +36,8 @@ public class OrganizationHelper extends HelperBase {
         return organizations;
     }
 
-    public String getTitleText() {
-        String text = wd.findElement(By.cssSelector("div.title")).getText();
-        System.out.println("Текст = " + text);
-        return text;
+    public String getTitleText() throws InterruptedException {
+        Thread.sleep(100);
+        return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }
