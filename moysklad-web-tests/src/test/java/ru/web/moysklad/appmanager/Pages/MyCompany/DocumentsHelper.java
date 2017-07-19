@@ -1,4 +1,4 @@
-package ru.web.moysklad.appmanager.Pages.MyCompany;
+package ru.web.moysklad.appmanager.pages.myCompany;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

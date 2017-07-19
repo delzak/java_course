@@ -91,8 +91,28 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Закупки"));
     }
 
-    public void supplies() {
-        click(By.linkText("Приёмки"));
+    public void purchaseOrder() {
+        click(By.linkText("Заказы поставщикам"));
+    }
+
+    public void invoiceIn() {
+        click(By.linkText("Счета поставщиков"));
+    }
+
+    public void supply() {
+        click(By.linkText("Приемки"));
+    }
+
+    public void purchaseReturn() {
+        click(By.linkText("Возвраты поставщикам"));
+    }
+
+    public void factureIn() {
+        click(By.linkText("Счета-фактуры полученные"));
+    }
+
+    public void purchaseControl() {
+        click(By.linkText("Управление закупками"));
     }
 
     //Вкладка "Продажи"
@@ -101,8 +121,52 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Продажи"));
     }
 
-    public void demands() {
+    public void customerOrder() {
+        click(By.linkText("Заказы покупателей"));
+    }
+
+    public void invoiceOut() {
+        click(By.linkText("Счета покупателям"));
+    }
+
+    public void demand() {
         click(By.linkText("Отгрузки"));
+    }
+
+    public void commissionReportIn() {
+        click(By.linkText("Полученные отчеты комиссионера"));
+    }
+
+    public void commissionReportOut() {
+        click(By.linkText("Выданные отчеты комиссионера"));
+    }
+
+    public void salesReturn() {
+        click(By.linkText("Возвраты покупателей"));
+    }
+
+    public void factureOut() {
+        click(By.linkText("Счета-фактуры выданные"));
+    }
+
+    public void pricelist() {
+        click(By.linkText("Прайс-листы"));
+    }
+
+    public void discount() {
+        click(By.linkText("Скидки"));
+    }
+
+    public void profitability() {
+        click(By.linkText("Прибыльность"));
+    }
+
+    public void comissionGoods() {
+        click(By.linkText("Товары на реализации"));
+    }
+
+    public void purchaseFunnel() {
+        click(By.linkText("Воронка продаж"));
     }
 
     //Вкладка "Склад"
@@ -113,10 +177,6 @@ public class NavigationHelper extends HelperBase {
 
     public void stocks() {
         click(By.linkText("Остатки"));
-    }
-
-    public void profitability() {
-        click(By.linkText("Прибыльность"));
     }
 
     //Вкладка "Деньги"
@@ -130,11 +190,6 @@ public class NavigationHelper extends HelperBase {
     public void productsAndServices() {
         click(By.linkText("Товары и услуги"));
     }
-
-
-
-
-
 
 
 

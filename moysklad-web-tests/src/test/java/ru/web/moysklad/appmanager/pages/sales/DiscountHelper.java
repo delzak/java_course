@@ -1,10 +1,11 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.pages.sales;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.web.moysklad.appmanager.HelperBase;
 
-public class RetailSalesReturnHelper extends HelperBase {
-    public RetailSalesReturnHelper(WebDriver wd) {
+public class DiscountHelper extends HelperBase {
+    public DiscountHelper(WebDriver wd) {
         super(wd);
     }
 

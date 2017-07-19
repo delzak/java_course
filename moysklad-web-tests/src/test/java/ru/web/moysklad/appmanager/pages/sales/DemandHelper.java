@@ -1,8 +1,9 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.pages.sales;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import ru.web.moysklad.appmanager.HelperBase;
 
 public class DemandHelper extends HelperBase {
 
@@ -30,5 +31,10 @@ public class DemandHelper extends HelperBase {
 
     public void clickActionButtonYes() {
         click(By.xpath("//table[@class='b-action-buttons-wrap']//span[.='Да']"));
+    }
+
+    public String getTitleText() throws InterruptedException {
+        Thread.sleep(100);
+        return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }

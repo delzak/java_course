@@ -7,7 +7,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.web.moysklad.appmanager.Pages.MyCompany.*;
+import ru.web.moysklad.appmanager.pages.myCompany.*;
+import ru.web.moysklad.appmanager.pages.purchases.*;
+import ru.web.moysklad.appmanager.pages.retail.*;
+import ru.web.moysklad.appmanager.pages.sales.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -37,9 +40,25 @@ public class ApplicationManager {
     private RetailSalesReturnHelper retailSalesReturnHelper;
     private RetailDrawerCashinHelper retailDrawerCashinHelper;
     private RetailDrawerCashoutHelper retailDrawerCashoutHelper;
-    private ProductHelper productHelper;
+    private PurchaseOrderHelper purchaseOrderHelper;
+    private InvoiceInHelper invoiceInHelper;
     private SupplyHelper supplyHelper;
+    private PurchaseReturnHelper purchaseReturnHelper;
+    private FactureInHelper factureInHelper;
+    private PurchaseControlHelper purchaseControlHelper;
+    private CustomOrderHelper customOrderHelper;
+    private InvoiceOutHelper invoiceOutHelper;
     private DemandHelper demandHelper;
+    private CommissionReportInHelper commissionReportInHelper;
+    private CommissionReportOutHelper commissionReportOutHelper;
+    private SalesReturnHelper salesReturnHelper;
+    private FactureOutHelper factureOutHelper;
+    private PricelistHelper pricelistHelper;
+    private DiscountHelper discountHelper;
+    private ProfitabilityHelper profitabilityHelper;
+    private CommissionGoodsHelper commissionGoodsHelper;
+    private PurchaseFunnelHelper purchaseFunnelHelper;
+    private ProductHelper productHelper;
     private String browser;
 
     public ApplicationManager(String browser) {
@@ -66,13 +85,11 @@ public class ApplicationManager {
         wd.get("https://online-13.moysklad.ru/");
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
-        organizationHelper = new OrganizationHelper(wd);
         productHelper = new ProductHelper(wd);
-        supplyHelper = new SupplyHelper(wd);
-        demandHelper = new DemandHelper(wd);
         tutorialHelper = new TutorialHelper(wd);
         sessionHelper = new SessionHelper(wd);
         dashboardHelper = new DashboardHelper(wd);
+        organizationHelper = new OrganizationHelper(wd);
         employeesHelper = new EmployeesHelper(wd);
         storagesHelper = new StoragesHelper(wd);
         documentsHelper = new DocumentsHelper(wd);
@@ -87,6 +104,24 @@ public class ApplicationManager {
         retailSalesReturnHelper = new RetailSalesReturnHelper(wd);
         retailDrawerCashinHelper = new RetailDrawerCashinHelper(wd);
         retailDrawerCashoutHelper = new RetailDrawerCashoutHelper(wd);
+        purchaseOrderHelper = new PurchaseOrderHelper(wd);
+        invoiceInHelper = new InvoiceInHelper(wd);
+        supplyHelper = new SupplyHelper(wd);
+        purchaseReturnHelper = new PurchaseReturnHelper(wd);
+        factureInHelper = new FactureInHelper(wd);
+        purchaseControlHelper = new PurchaseControlHelper(wd);
+        customOrderHelper = new CustomOrderHelper(wd);
+        invoiceOutHelper = new InvoiceOutHelper(wd);
+        demandHelper = new DemandHelper(wd);
+        commissionReportInHelper = new CommissionReportInHelper(wd);
+        commissionReportOutHelper = new CommissionReportOutHelper(wd);
+        salesReturnHelper = new SalesReturnHelper(wd);
+        factureOutHelper = new FactureOutHelper(wd);
+        pricelistHelper = new PricelistHelper(wd);
+        discountHelper = new DiscountHelper(wd);
+        profitabilityHelper = new ProfitabilityHelper(wd);
+        commissionGoodsHelper = new CommissionGoodsHelper(wd);
+        purchaseFunnelHelper = new PurchaseFunnelHelper(wd);
         sessionHelper.login("admin@aatest", "111111");
     }
 
@@ -114,7 +149,7 @@ public class ApplicationManager {
         return organizationHelper;
     }
 
-    public EmployeesHelper employees() {
+    public EmployeesHelper employee() {
         return employeesHelper;
     }
 
@@ -170,17 +205,83 @@ public class ApplicationManager {
         return retailDrawerCashoutHelper;
     }
 
-    public ProductHelper good() {
-        return productHelper;
+    public PurchaseOrderHelper purchaseOrder() {
+        return purchaseOrderHelper;
+    }
+
+    public InvoiceInHelper invoiceIn() {
+        return invoiceInHelper;
     }
 
     public SupplyHelper supply() {
         return supplyHelper;
     }
 
+    public PurchaseReturnHelper purchaseReturn() {
+        return purchaseReturnHelper;
+    }
+
+    public FactureInHelper factureIn() {
+        return factureInHelper;
+    }
+
+    public PurchaseControlHelper purchaseControl() {
+        return purchaseControlHelper;
+    }
+
+    public CustomOrderHelper customerOrder() {
+        return customOrderHelper;
+    }
+
+    public InvoiceOutHelper invoiceOut() {
+        return invoiceOutHelper;
+    }
+
     public DemandHelper demand() {
         return demandHelper;
     }
+
+    public CommissionReportInHelper commissionReportIn() {
+        return commissionReportInHelper;
+    }
+
+    public CommissionReportOutHelper commissionReportOut() {
+        return commissionReportOutHelper;
+    }
+
+    public SalesReturnHelper salesReturn() {
+        return salesReturnHelper;
+    }
+
+    public FactureOutHelper factureOut() {
+        return factureOutHelper;
+    }
+
+    public PricelistHelper pricelist() {
+        return pricelistHelper;
+    }
+
+    public DiscountHelper discount() {
+        return discountHelper;
+    }
+
+    public ProfitabilityHelper profitability() {
+        return profitabilityHelper;
+    }
+
+    public CommissionGoodsHelper commissionGoods() {
+        return commissionGoodsHelper;
+    }
+
+    public PurchaseFunnelHelper purchaseFunnel() {
+        return purchaseFunnelHelper;
+    }
+
+    public ProductHelper good() {
+        return productHelper;
+    }
+
+
 
 
 }

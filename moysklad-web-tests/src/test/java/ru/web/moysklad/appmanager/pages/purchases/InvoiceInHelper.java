@@ -1,10 +1,11 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.pages.purchases;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import ru.web.moysklad.appmanager.HelperBase;
 
-public class RetailDrawerCashinHelper extends HelperBase {
-    public RetailDrawerCashinHelper(WebDriver wd) {
+public class InvoiceInHelper extends HelperBase {
+    public InvoiceInHelper(WebDriver wd) {
         super(wd);
     }
 
