@@ -175,8 +175,49 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Склад"));
     }
 
+    public void loss() {
+        click(By.linkText("Списания"));
+    }
+
+    public void enter() {
+        click(By.linkText("Оприходования"));
+    }
+
+    public void move() {
+        click(By.linkText("Перемещения"));
+    }
+
+    public void inventory() {
+        click(By.linkText("Инвентаризации"));
+    }
+
+
+    public void processing() {
+        click(By.linkText("Тех. операции"));
+    }
+
+    public void processingPlan() {
+        click(By.linkText("Тех. карты"));
+    }
+
+    public void processingOrder() {
+        click(By.linkText("Заказы на производство"));
+    }
+
+    public void internalOrder() {
+        click(By.linkText("Внутренние заказы"));
+    }
+
     public void stocks() {
         click(By.linkText("Остатки"));
+    }
+
+    public void turnOver() {
+        click(By.linkText("Обороты"));
+    }
+
+    public void serialNumber() {
+        click(By.linkText("Сер. номера"));
     }
 
     //Вкладка "Деньги"

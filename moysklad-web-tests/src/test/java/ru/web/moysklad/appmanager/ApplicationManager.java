@@ -11,6 +11,7 @@ import ru.web.moysklad.appmanager.pages.myCompany.*;
 import ru.web.moysklad.appmanager.pages.purchases.*;
 import ru.web.moysklad.appmanager.pages.retail.*;
 import ru.web.moysklad.appmanager.pages.sales.*;
+import ru.web.moysklad.appmanager.pages.store.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +25,7 @@ public class ApplicationManager {
     private NavigationHelper navigationHelper;
     private ClickHelper clickHelper;
     private TutorialHelper tutorialHelper;
+
     private DashboardHelper dashboardHelper;
     private OrganizationHelper organizationHelper;
     private EmployeesHelper employeesHelper;
@@ -34,18 +36,21 @@ public class ApplicationManager {
     private SettingsHelper settingsHelper;
     private SubscriptionHelper subscriptionHelper;
     private SpecialOfferHelper specialOfferHelper;
+
     private RetailStoreHelper retailStoreHelper;
     private RetailShiftHelper retailShiftHelper;
     private RetailDemandHelper retailDemandHelper;
     private RetailSalesReturnHelper retailSalesReturnHelper;
     private RetailDrawerCashinHelper retailDrawerCashinHelper;
     private RetailDrawerCashoutHelper retailDrawerCashoutHelper;
+
     private PurchaseOrderHelper purchaseOrderHelper;
     private InvoiceInHelper invoiceInHelper;
     private SupplyHelper supplyHelper;
     private PurchaseReturnHelper purchaseReturnHelper;
     private FactureInHelper factureInHelper;
     private PurchaseControlHelper purchaseControlHelper;
+
     private CustomOrderHelper customOrderHelper;
     private InvoiceOutHelper invoiceOutHelper;
     private DemandHelper demandHelper;
@@ -58,6 +63,19 @@ public class ApplicationManager {
     private ProfitabilityHelper profitabilityHelper;
     private CommissionGoodsHelper commissionGoodsHelper;
     private PurchaseFunnelHelper purchaseFunnelHelper;
+
+    private LossHelper lossHelper;
+    private EnterHelper enterHelper;
+    private MoveHelper moveHelper;
+    private InventoryHelper inventoryHelper;
+    private ProcessingHelper processingHelper;
+    private ProcessingPlanHelper processingPlanHelper;
+    private ProcessingOrderHelper processingOrderHelper;
+    private InternalOrderHelper internalOrderHelper;
+    private StocksHelper stocksHelper;
+    private TurnOverHelper turnOverHelper;
+    private SerialNumberHelper serialNumberHelper;
+
     private ProductHelper productHelper;
     private String browser;
 
@@ -81,13 +99,16 @@ public class ApplicationManager {
             capabilities.setCapability(ChromeOptions.CAPABILITY, options);
             wd = new ChromeDriver(capabilities);
         }
+
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         wd.get("https://online-13.moysklad.ru/");
+
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         productHelper = new ProductHelper(wd);
         tutorialHelper = new TutorialHelper(wd);
         sessionHelper = new SessionHelper(wd);
+
         dashboardHelper = new DashboardHelper(wd);
         organizationHelper = new OrganizationHelper(wd);
         employeesHelper = new EmployeesHelper(wd);
@@ -98,18 +119,21 @@ public class ApplicationManager {
         appsHelper = new AppsHelper(wd);
         subscriptionHelper = new SubscriptionHelper(wd);
         specialOfferHelper = new SpecialOfferHelper(wd);
+
         retailStoreHelper = new RetailStoreHelper(wd);
         retailShiftHelper = new RetailShiftHelper(wd);
         retailDemandHelper = new RetailDemandHelper(wd);
         retailSalesReturnHelper = new RetailSalesReturnHelper(wd);
         retailDrawerCashinHelper = new RetailDrawerCashinHelper(wd);
         retailDrawerCashoutHelper = new RetailDrawerCashoutHelper(wd);
+
         purchaseOrderHelper = new PurchaseOrderHelper(wd);
         invoiceInHelper = new InvoiceInHelper(wd);
         supplyHelper = new SupplyHelper(wd);
         purchaseReturnHelper = new PurchaseReturnHelper(wd);
         factureInHelper = new FactureInHelper(wd);
         purchaseControlHelper = new PurchaseControlHelper(wd);
+
         customOrderHelper = new CustomOrderHelper(wd);
         invoiceOutHelper = new InvoiceOutHelper(wd);
         demandHelper = new DemandHelper(wd);
@@ -122,6 +146,19 @@ public class ApplicationManager {
         profitabilityHelper = new ProfitabilityHelper(wd);
         commissionGoodsHelper = new CommissionGoodsHelper(wd);
         purchaseFunnelHelper = new PurchaseFunnelHelper(wd);
+
+        lossHelper = new LossHelper(wd);
+        enterHelper = new EnterHelper(wd);
+        moveHelper = new MoveHelper(wd);
+        inventoryHelper = new InventoryHelper(wd);
+        processingHelper = new ProcessingHelper(wd);
+        processingPlanHelper = new ProcessingPlanHelper(wd);
+        processingOrderHelper = new ProcessingOrderHelper(wd);
+        internalOrderHelper = new InternalOrderHelper(wd);
+        stocksHelper = new StocksHelper(wd);
+        turnOverHelper = new TurnOverHelper(wd);
+        serialNumberHelper = new SerialNumberHelper(wd);
+
         sessionHelper.login("admin@aatest", "111111");
     }
 
@@ -275,6 +312,50 @@ public class ApplicationManager {
 
     public PurchaseFunnelHelper purchaseFunnel() {
         return purchaseFunnelHelper;
+    }
+
+    public LossHelper loss() {
+        return lossHelper;
+    }
+
+    public EnterHelper enter() {
+        return enterHelper;
+    }
+
+    public MoveHelper move() {
+        return moveHelper;
+    }
+
+    public InventoryHelper inventory() {
+        return inventoryHelper;
+    }
+
+    public ProcessingHelper processing() {
+        return processingHelper;
+    }
+
+    public ProcessingPlanHelper processingPlan() {
+        return processingPlanHelper;
+    }
+
+    public ProcessingOrderHelper processingOrder() {
+        return processingOrderHelper;
+    }
+
+    public InternalOrderHelper internalOrder() {
+        return internalOrderHelper;
+    }
+
+    public StocksHelper stocks() {
+        return stocksHelper;
+    }
+
+    public TurnOverHelper turnOver() {
+        return turnOverHelper;
+    }
+
+    public SerialNumberHelper serialNumber() {
+        return serialNumberHelper;
     }
 
     public ProductHelper good() {

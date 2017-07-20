@@ -87,6 +87,29 @@ public class Navigation extends TestBase{
         assertEquals("Воронка продаж", app.purchaseFunnel().getTitleText());
 
         //Навигация во вклакде "Склад"
+        app.goTo().store();
+        app.goTo().loss();
+        assertEquals("Списания", app.loss().getTitleText());
+        app.goTo().enter();
+        assertEquals("Оприходования", app.enter().getTitleText());
+        app.goTo().move();
+        assertEquals("Перемещения", app.move().getTitleText());
+        app.goTo().inventory();
+        assertEquals("Инвентаризации", app.inventory().getTitleText());
+        app.goTo().processing();
+        assertEquals("Технологические операции", app.processing().getTitleText());
+        app.goTo().processingPlan();
+        assertEquals("Тех. карты", app.processingPlan().getTitleText());
+        app.goTo().processingOrder();
+        assertEquals("Заказы на производство", app.processingOrder().getTitleText());
+        app.goTo().internalOrder();
+        assertEquals("Внутренние заказы", app.internalOrder().getTitleText());
+        app.goTo().stocks();
+        assertEquals("Остатки", app.stocks().getTitleText());
+        app.goTo().turnOver();
+        assertEquals("Обороты", app.turnOver().getTitleText());
+        app.goTo().serialNumber();
+        assertEquals("Сер. номера", app.serialNumber().getTitleText());
 
         //Навигация во вкладке "Деньги"
 

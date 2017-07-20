@@ -23,7 +23,7 @@ public class SupplyHelper extends HelperBase {
     }
 
     public String getTitleText() throws InterruptedException {
-        Thread.sleep(100);
+        Thread.sleep(150);
         return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }

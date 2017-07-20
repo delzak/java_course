@@ -10,7 +10,7 @@ public class InvoiceInHelper extends HelperBase {
     }
 
     public String getTitleText() throws InterruptedException {
-        Thread.sleep(100);
+        Thread.sleep(200);
         return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }

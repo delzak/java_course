@@ -1,11 +1,11 @@
-package ru.web.moysklad.appmanager.pages.sales;
+package ru.web.moysklad.appmanager.pages.store;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.web.moysklad.appmanager.HelperBase;
 
-public class CommissionReportInHelper extends HelperBase {
-    public CommissionReportInHelper(WebDriver wd) {
+public class LossHelper extends HelperBase {
+    public LossHelper(WebDriver wd) {
         super(wd);
     }
 
