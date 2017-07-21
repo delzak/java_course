@@ -191,7 +191,6 @@ public class NavigationHelper extends HelperBase {
         click(By.linkText("Инвентаризации"));
     }
 
-
     public void processing() {
         click(By.linkText("Тех. операции"));
     }
@@ -222,16 +221,49 @@ public class NavigationHelper extends HelperBase {
 
     //Вкладка "Деньги"
 
+    public void money() {
+        click(By.linkText("Деньги"));
+    }
+
+    public void finance() {
+        click(By.linkText("Платежи"));
+    }
+
+    public void cashFlow() {
+        click(By.linkText("Движение денежных средств"));
+    }
+
+    public void customersBalanceList() {
+        click(By.linkText("Взаиморасчеты"));
+    }
+
+    public void pnl() {
+        click(By.linkText("Прибыли и убытки"));
+    }
+
     //Вкладка "Справочники"
 
     public void catalog() {
         click(By.linkText("Справочники"));
     }
 
-    public void productsAndServices() {
+    public void good() {
         click(By.linkText("Товары и услуги"));
     }
 
+    public void counterparty() {
+        click(By.linkText("Контрагенты"));
+    }
 
+    public void currency() {
+        click(By.linkText("Валюты"));
+    }
 
+    public void project() {
+        click(By.linkText("Проекты"));
+    }
+
+    public void contract() {
+        click(By.linkText("Договоры"));
+    }
 }

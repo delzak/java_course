@@ -112,7 +112,27 @@ public class Navigation extends TestBase{
         assertEquals("Сер. номера", app.serialNumber().getTitleText());
 
         //Навигация во вкладке "Деньги"
+        app.goTo().money();
+        app.goTo().finance();
+        assertEquals("Платежи", app.finance().getTitleText());
+        app.goTo().cashFlow();
+        assertEquals("Движение денежных средств", app.cashFlow().getTitleText());
+        app.goTo().customersBalanceList();
+        assertEquals("Взаиморасчеты", app.customersBalanceList().getTitleText());
+        app.goTo().pnl();
+        assertEquals("Прибыли и убытки", app.pnl().getTitleText());
 
         //Навигация во вкладке "Справочники"
+        app.goTo().catalog();
+        app.goTo().good();
+        assertEquals("Товары и услуги", app.good().getTitleText());
+        app.goTo().counterparty();
+        assertEquals("Контрагенты", app.counterparty().getTitleText());
+        app.goTo().currency();
+        assertEquals("Валюты", app.currency().getTitleText());
+        app.goTo().project();
+        assertEquals("Проекты", app.project().getTitleText());
+        app.goTo().contract();
+        assertEquals("Договоры", app.contract().getTitleText());
     }
 }

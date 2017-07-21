@@ -1,16 +1,16 @@
-package ru.web.moysklad.appmanager.pages.sales;
+package ru.web.moysklad.appmanager.pages.money;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.web.moysklad.appmanager.HelperBase;
 
-public class CustomOrderHelper extends HelperBase {
-    public CustomOrderHelper(WebDriver wd) {
+public class FinanceHelper extends HelperBase {
+    public FinanceHelper(WebDriver wd) {
         super(wd);
     }
 
     public String getTitleText() throws InterruptedException {
-        Thread.sleep(200);
+        Thread.sleep(100);
         return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }

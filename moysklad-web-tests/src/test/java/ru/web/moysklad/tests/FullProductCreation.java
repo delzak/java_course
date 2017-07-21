@@ -8,7 +8,7 @@ public class FullProductCreation extends TestBase{
     @Test
     public void testCreateFullProduct () throws InterruptedException {
         app.goTo().catalog();
-        app.goTo().productsAndServices();
+        app.goTo().good();
         Thread.sleep(500);
         app.good().clickButtonNewProduct();
         app.good().inputProductName(new ProductData().withName("FullProduct"));

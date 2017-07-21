@@ -34,7 +34,7 @@ public class DemandHelper extends HelperBase {
     }
 
     public String getTitleText() throws InterruptedException {
-        Thread.sleep(150);
+        Thread.sleep(200);
         return wd.findElement(By.cssSelector("div.title")).getText();
     }
 }

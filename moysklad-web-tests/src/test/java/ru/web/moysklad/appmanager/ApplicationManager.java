@@ -7,6 +7,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.web.moysklad.appmanager.pages.catalog.*;
+import ru.web.moysklad.appmanager.pages.money.*;
 import ru.web.moysklad.appmanager.pages.myCompany.*;
 import ru.web.moysklad.appmanager.pages.purchases.*;
 import ru.web.moysklad.appmanager.pages.retail.*;
@@ -51,7 +53,7 @@ public class ApplicationManager {
     private FactureInHelper factureInHelper;
     private PurchaseControlHelper purchaseControlHelper;
 
-    private CustomOrderHelper customOrderHelper;
+    private CustomerOrderHelper customerOrderHelper;
     private InvoiceOutHelper invoiceOutHelper;
     private DemandHelper demandHelper;
     private CommissionReportInHelper commissionReportInHelper;
@@ -76,7 +78,17 @@ public class ApplicationManager {
     private TurnOverHelper turnOverHelper;
     private SerialNumberHelper serialNumberHelper;
 
+    private FinanceHelper financeHelper;
+    private CashFlowHelper cashFlowHelper;
+    private CustomersBalanceListHelper customersBalanceListHelper;
+    private PnlHelper pnlHelper;
+
     private ProductHelper productHelper;
+    private CounterpartyHelper counterpartyHelper;
+    private CurrencyHelper currencyHelper;
+    private ProjectHelper projectHelper;
+    private ContractHelper contractHelper;
+
     private String browser;
 
     public ApplicationManager(String browser) {
@@ -105,7 +117,6 @@ public class ApplicationManager {
 
         clickHelper = new ClickHelper(wd);
         navigationHelper = new NavigationHelper(wd);
-        productHelper = new ProductHelper(wd);
         tutorialHelper = new TutorialHelper(wd);
         sessionHelper = new SessionHelper(wd);
 
@@ -134,7 +145,7 @@ public class ApplicationManager {
         factureInHelper = new FactureInHelper(wd);
         purchaseControlHelper = new PurchaseControlHelper(wd);
 
-        customOrderHelper = new CustomOrderHelper(wd);
+        customerOrderHelper = new CustomerOrderHelper(wd);
         invoiceOutHelper = new InvoiceOutHelper(wd);
         demandHelper = new DemandHelper(wd);
         commissionReportInHelper = new CommissionReportInHelper(wd);
@@ -158,6 +169,17 @@ public class ApplicationManager {
         stocksHelper = new StocksHelper(wd);
         turnOverHelper = new TurnOverHelper(wd);
         serialNumberHelper = new SerialNumberHelper(wd);
+
+        financeHelper = new FinanceHelper(wd);
+        cashFlowHelper = new CashFlowHelper(wd);
+        customersBalanceListHelper = new CustomersBalanceListHelper(wd);
+        pnlHelper = new PnlHelper(wd);
+
+        productHelper = new ProductHelper(wd);
+        counterpartyHelper = new CounterpartyHelper(wd);
+        currencyHelper = new CurrencyHelper(wd);
+        projectHelper = new ProjectHelper(wd);
+        contractHelper = new ContractHelper(wd);
 
         sessionHelper.login("admin@aatest", "111111");
     }
@@ -266,8 +288,8 @@ public class ApplicationManager {
         return purchaseControlHelper;
     }
 
-    public CustomOrderHelper customerOrder() {
-        return customOrderHelper;
+    public CustomerOrderHelper customerOrder() {
+        return customerOrderHelper;
     }
 
     public InvoiceOutHelper invoiceOut() {
@@ -358,11 +380,40 @@ public class ApplicationManager {
         return serialNumberHelper;
     }
 
+    public FinanceHelper finance() {
+        return financeHelper;
+    }
+
+    public CashFlowHelper cashFlow() {
+        return cashFlowHelper;
+    }
+
+    public CustomersBalanceListHelper customersBalanceList() {
+        return customersBalanceListHelper;
+    }
+
+    public PnlHelper pnl() {
+        return pnlHelper;
+    }
+
     public ProductHelper good() {
         return productHelper;
     }
 
+    public CounterpartyHelper counterparty() {
+        return counterpartyHelper;
+    }
 
+    public CurrencyHelper currency() {
+        return currencyHelper;
+    }
 
+    public ProjectHelper project() {
+        return projectHelper;
+    }
+
+    public ContractHelper contract() {
+        return contractHelper;
+    }
 
 }

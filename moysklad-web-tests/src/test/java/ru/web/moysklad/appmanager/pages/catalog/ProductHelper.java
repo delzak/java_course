@@ -1,8 +1,9 @@
-package ru.web.moysklad.appmanager;
+package ru.web.moysklad.appmanager.pages.catalog;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import ru.web.moysklad.appmanager.HelperBase;
 import ru.web.moysklad.model.ProductData;
 
 public class ProductHelper extends HelperBase {
@@ -68,4 +69,8 @@ public class ProductHelper extends HelperBase {
         type(By.xpath("//table[@class='b-validated-field-table']/tbody/tr/td/input"), productData.getEan13());
     }
 
+    public String getTitleText() throws InterruptedException {
+        Thread.sleep(100);
+        return wd.findElement(By.cssSelector("div.title")).getText();
+    }
 }
