@@ -7,22 +7,21 @@ import java.io.InputStreamReader;
  */
 public class Base {
     public static void main (String[] args) throws IOException {
-        double a; //first number
-        double b; //second number
-        int c; //operation
+        int choice;
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Input the first number:");
-        a = Double.parseDouble(reader.readLine());
+        System.out.println("Enter the number of the program you want to start:");
+        System.out.println("1. Calculator\n2. Search the max element of an array");
+        choice = Integer.parseInt(reader.readLine());
 
-        System.out.println("Input the second number:");
-        b = Double.parseDouble(reader.readLine());
+        switch (choice) {
+            case 1:
+                Calculator.startCalculator();
+                break;
+            case 2:
+                SearchInArray.startSearch();
+                break;
+        }
 
-        System.out.println("Input the number of operation:");
-        System.out.println("1: +\n2: -\n3: *\n4: /");
-        c = Integer.parseInt(reader.readLine());
-
-        Operation operation = new Operation();
-        operation.operation(a, b, c);
     }
 }
