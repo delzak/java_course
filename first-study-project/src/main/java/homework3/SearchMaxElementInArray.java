@@ -1,3 +1,5 @@
+package homework3;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * Created by Алексей on 13.09.2018.
  */
-public class SearchInArray {
+public class SearchMaxElementInArray {
     public static void startSearch() throws IOException {
         String word = null;
         int arrayLength = 0;
