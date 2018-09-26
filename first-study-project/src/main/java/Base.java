@@ -2,6 +2,7 @@ import homework3.Calculator;
 import homework3.SearchMaxElementInArray;
 import homework4.gift.GiftCollection;
 import homework4.massive.SearchMinMaxValue;
+import homework6.TextStatistics;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +33,10 @@ public class Base {
                 break;
             case 4:
                 GiftCollection.collect();
+                break;
+            case 5:
+                TextStatistics txtStat = new TextStatistics("src/main/java/homework6/WordsFile.txt");
+                txtStat.start();
                 break;
         }
 
