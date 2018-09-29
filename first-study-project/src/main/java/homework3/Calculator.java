@@ -9,22 +9,48 @@ import java.io.InputStreamReader;
  */
 public class Calculator {
     public static void startCalculator () throws IOException {
-        double a; //first number
-        double b; //second number
-        int c; //operation
+        double a = 0; //first number
+        double b = 0; //second number
+        int c = 0; //operation
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("Input the first number:");
-        a = Double.parseDouble(reader.readLine());
+        while (a == 0) {
+            try {
+                System.out.println("Введите первое число:");
+                a = Double.parseDouble(reader.readLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Число указано неверно! " + e.getMessage());
+                a = 0;
+            }
+        }
 
-        System.out.println("Input the second number:");
-        b = Double.parseDouble(reader.readLine());
+        while (b == 0) {
+            try {
+                System.out.println("Введите второе число:");
+                b = Double.parseDouble(reader.readLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Число указано неверно! " + e.getMessage());
+                b = 0;
+            }
+        }
 
-        System.out.println("Input the number of operation:");
-        System.out.println("1: +\n2: -\n3: *\n4: /");
-        c = Integer.parseInt(reader.readLine());
+        while (c == 0) {
+            try {
+                System.out.println("Укажите номер действия:");
+                System.out.println("1: +\n2: -\n3: *\n4: /");
+                c = Integer.parseInt(reader.readLine());
+                if (c < 1 || c > 4) {
+                    System.out.println("Нет такого действия!");
+                    c = 0;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Номер действия указан неверно! " + e.getMessage());
+                c = 0;
+            }
+        }
 
         operation(a, b, c);
+        reader.close();
     }
 
 

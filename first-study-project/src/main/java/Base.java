@@ -38,6 +38,11 @@ public class Base {
                 TextStatistics txtStat = new TextStatistics("src/main/java/homework6/WordsFile.txt");
                 txtStat.start();
                 break;
+            case 6:
+                homework5.Calculator calculator = new homework5.Calculator();
+                System.out.println(calculator.divide(5, 0));
+                calculator.getException();
+                break;
         }
 
     }

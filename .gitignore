@@ -15,3 +15,15 @@ gradle-app.setting
 .idea/workspace.xml
 *.xml___jb_tmp___
 *.log
+moysklad-com.lognex.test.ui-93e774328922/pom.xml
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/ContractBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/ContragentBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/CurrencyBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/DocumentBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/GroupBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/EmployeeBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/PricelistBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/builders/TaskBuilder.java
+moysklad-com.lognex.test.ui-93e774328922/src/main/java/com/lognex/entities/CommonOrder.java
+first-study-project/.idea/workspace.xml
+first-study-project/.idea/workspace.xml

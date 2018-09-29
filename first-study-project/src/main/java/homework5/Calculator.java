@@ -117,4 +117,13 @@ public class Calculator {
     public double divideDoubleValue1Value2() {
         return getValue1()/getValue2();
     }
+
+    public void getException() {
+        try
+        {
+            System.out.println((Integer.parseInt("asd")/Integer.parseInt("sdf")));
+        } catch (NumberFormatException e) {
+            System.out.println("Один из элементов указан неверно! " + e.getMessage());
+        }
+    }
 }
