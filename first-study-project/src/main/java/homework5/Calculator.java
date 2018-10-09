@@ -98,7 +98,7 @@ public class Calculator {
         return getNumber1()*getNumber2();
     }
 
-    public double multiplicationDoubleNumber1Number2() {
+    public double multiplicationDoubleValue1Value2() {
         return getValue1()*getValue2();
     }
 
