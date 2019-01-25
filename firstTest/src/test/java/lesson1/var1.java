@@ -16,7 +16,8 @@ import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
 public class var1 {
-    ChromeDriver wd;
+    //ChromeDriver driver;
+    WebDriver wd;
     String surname = "Surname";
     String name = "Name";
     String ruSurname = "Фамилия";
@@ -30,7 +31,7 @@ public class var1 {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        //wd = new FirefoxDriver();
+        //driver = new FirefoxDriver();
         wd = new ChromeDriver();
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wd.manage().window().maximize();
@@ -135,14 +136,5 @@ public class var1 {
     @AfterMethod
     public void tearDown() {
         wd.quit();
-    }
-    
-    public static boolean isAlertPresent(FirefoxDriver wd) {
-        try {
-            wd.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
     }
 }
