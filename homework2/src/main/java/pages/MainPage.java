@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Created by Алексей on 24.01.2019.
+ * Created by Алексей on 24.01.2019
  */
 public class MainPage {
 

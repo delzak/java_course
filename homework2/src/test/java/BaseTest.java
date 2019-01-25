@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 /**
- * Created by Алексей on 24.01.2019.
+ * Created by Алексей on 24.01.2019
  */
 public class BaseTest {
 

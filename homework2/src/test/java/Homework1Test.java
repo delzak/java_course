@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by Алексей on 24.01.2019.
+ * Created by Алексей on 24.01.2019
  */
 public class Homework1Test extends BaseTest{
     String surname = "Surname";

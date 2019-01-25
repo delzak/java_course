@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * Created by Алексей on 24.01.2019.
+ * Created by Алексей on 24.01.2019
  */
 public class TravelAndShopingPage {
 

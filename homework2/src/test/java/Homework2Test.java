@@ -4,7 +4,7 @@ import pages.TravelAndShopingPage;
 import pages.TravelInsurancePage;
 
 /**
- * Created by Алексей on 24.01.2019.
+ * Created by Алексей on 24.01.2019
  */
 public class Homework2Test extends BaseTest {
     String surname = "Surname";
