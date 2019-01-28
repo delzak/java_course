@@ -1,13 +1,14 @@
 import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import steps.BaseSteps;
 
 import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Алексей on 24.01.2019
  */
-public class Homework1Test extends BaseTest{
+public class Homework1Test extends BaseSteps {
     String surname = "Surname";
     String name = "Name";
     String ruSurname = "Фамилия";
@@ -21,7 +22,7 @@ public class Homework1Test extends BaseTest{
 
     @Test
     @Ignore
-    public void testHomework2() {
+    public void testHomework1() {
         //Перейти на страницу http://www.sberbank.ru/ru/person
         goTo(baseUrl);
 

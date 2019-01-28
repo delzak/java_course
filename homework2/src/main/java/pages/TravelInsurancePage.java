@@ -113,6 +113,7 @@ public class TravelInsurancePage {
         locator.click();
         locator.clear();
         locator.sendKeys(value);
+        locator.click();
     }
 
     public void assertFieldText(String fieldName, String value) {

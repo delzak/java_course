@@ -1,12 +1,14 @@
+import org.junit.Ignore;
 import org.junit.Test;
 import pages.MainPage;
 import pages.TravelAndShopingPage;
 import pages.TravelInsurancePage;
+import steps.BaseSteps;
 
 /**
  * Created by Алексей on 24.01.2019
  */
-public class Homework2Test extends BaseTest {
+public class Homework2Test extends BaseSteps {
     String surname = "Surname";
     String name = "Name";
     String ruSurname = "Фамилия";
@@ -19,8 +21,9 @@ public class Homework2Test extends BaseTest {
     String issuedBy = "Выдан людьми из паспортного стола";
 
     @Test
-    public void newInsuranceTest() {
-        //Переход на страницу http://www.sberbank.ru/ru/person осуществляется в BaseTest
+    @Ignore
+    public void testHomework2() {
+        //Переход на страницу http://www.sberbank.ru/ru/person осуществляется в steps.BaseSteps
         MainPage mainPage = new MainPage(driver);
 
         //Нажать на – Страхование
